@@ -12,7 +12,7 @@ Voice can be warm, formal, playful or technical depending on the product. Do not
 
 ## Thai and multilingual copy
 
-Use natural Thai word order and terms the audience actually uses. Choose a consistent politeness level and pronouns appropriate to the brand instead of appending ครับ/ค่ะ to every UI label. Avoid unnecessary transliteration when a familiar Thai term is clearer; retain recognized technical names when translation would confuse.
+Use natural Thai word order and terms the audience actually uses. Choose a consistent politeness level and pronouns appropriate to the brand instead of appending Thai polite particles to every UI label. Avoid unnecessary transliteration when a familiar Thai term is clearer; retain recognized technical names when translation would confuse.
 
 Do not evaluate Thai by splitting only on spaces or applying English readability formulas. Check word breaks, line height, diacritics, font fallback and long labels in the rendered layout. Preserve locale-specific dates, currency, addresses and numerals according to the product's audience; do not silently convert them based on the machine path or locale.
 
@@ -24,15 +24,15 @@ Tell the user what an action does and what happens next. An error should explain
 
 Example of removing a needless wrapper while preserving intent:
 
-- Before: “ผู้ใช้งานสามารถดำเนินการกดปุ่มด้านล่างเพื่อทำการยืนยันข้อมูลการจองได้”
-- After: “ตรวจสอบข้อมูลการจอง แล้วกดยืนยัน” — use this only when reviewing the information is actually part of the flow; otherwise keep the original action's scope.
+- Before: “Users may proceed to click the button below in order to confirm their booking information.”
+- After: “Review your booking details, then confirm.” Use this only when review is actually part of the flow; otherwise preserve the original action's scope. Apply the same editing principle idiomatically in the content's language.
 
 ## Local editorial cues
 
 ```text
-node SKILL_DIR/scripts/copy.mjs --file work/page-copy.txt --language th --out work/copy-review.json
+node SKILL_DIR/scripts/copy.mjs --file work/page-copy.txt --language en --out work/copy-review.json
 ```
 
-Use an appropriate BCP 47 language tag (`th`, `en`, etc.). The helper uses locale-aware segmentation and reports repeated passages, generic standalone CTA labels and claims that may need evidence. These are review prompts, not errors to automatically remove. It does not overwrite input, rewrite text, upload content, verify facts or assign a human/AI/naturalness score. Respect the document's Markdown structure and legal/technical meaning when interpreting results.
+Use the content's BCP 47 language tag (`th`, `en`, etc.); the default is English. The helper uses locale-aware segmentation and reports repeated passages, generic standalone CTA labels and claims that may need evidence. These are review prompts, not errors to automatically remove. It does not overwrite input, rewrite text, upload content, verify facts or assign a human/AI/naturalness score. Respect the document's Markdown structure and legal/technical meaning when interpreting results.
 
 For a rewrite, deliver the actual improved copy and explain only material meaning changes or unresolved claims. Do not fabricate personal experiences, testimonials, credentials or citations to make text sound more human. SEO/AEO goals should not make the language repetitive or misleading.

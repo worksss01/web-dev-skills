@@ -1,4 +1,4 @@
-name: "Bug or compatibility problem / บั๊กเครื่องมือ"
+name: "Bug or compatibility problem"
 description: "Report a reproducible problem in Web Debug helpers, installation or compatibility."
 title: "[Bug]: "
 labels: ["needs-triage"]
@@ -12,14 +12,14 @@ body:
   - type: textarea
     id: symptom
     attributes:
-      label: "What failed? / อาการที่พบ"
+      label: "What failed?"
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: "Web Debug version"
-      placeholder: "For example 1.6.2, or unknown"
+      placeholder: "For example 1.6.3, or unknown"
     validations:
       required: true
   - type: dropdown

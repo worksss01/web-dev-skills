@@ -9,7 +9,7 @@ import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parent.parent
-PAYLOAD_DIRS=('web-debug','tests','audit','examples','reports','validation')
+PAYLOAD_DIRS=('web-debug','tests','audit','examples','reports','validation','tools','adapters')
 def digest(data):return hashlib.sha256(data).hexdigest()
 
 def read_tree(folder):
@@ -28,7 +28,9 @@ def collect_payload():
     result={}
     for directory in PAYLOAD_DIRS:
         for relative,data in read_tree(ROOT/directory).items():result[directory+'/'+relative]=data
-    for file in [ROOT/'install.mjs',ROOT/'REVIEW-INDEX.md',ROOT/'LICENSE',*ROOT.glob('*.th.md')]:result[file.name]=file.read_bytes()
+    for file in [ROOT/'install.mjs',ROOT/'LICENSE',*(p for p in ROOT.glob('*.md') if p.name!='AGENTS.md')]:result[file.name]=file.read_bytes()
+    for relative in ('docs/UPDATES.md','docs/cowork/UPLOAD.md','docs/cowork/package-validation.json','docs/cowork/local-smoke-validation.json'):
+        result[relative]=(ROOT/relative).read_bytes()
     return result
 
 def manifest(files):return ''.join(f'{digest(data)}  {name}\n' for name,data in sorted(files.items())).encode()
@@ -40,6 +42,10 @@ def check_links(files):
         for link in re.findall(r'\]\(([^)]+)\)',data.decode('utf-8')):
             if '://' in link or link.startswith('#'):continue
             target=posixpath.normpath(posixpath.join(posixpath.dirname(name),link.split('#',1)[0]))
+            # The source overlay inherits base references at build time. The
+            # rendered Cowork payload is validated independently below.
+            if target not in files and name.startswith('adapters/cowork/') and target.startswith('adapters/cowork/'):
+                target='web-debug/'+target.removeprefix('adapters/cowork/')
             if target not in files:raise ValueError(f'Missing packaged link: {name}: {link}')
             count+=1
     return count
@@ -68,8 +74,8 @@ def main():
     if options.manifest_only:
         (ROOT/'MANIFEST.sha256').write_bytes(manifest_data)
         print(json.dumps({'version':version,'manifestEntries':len(full),'mode':'manifest-only'}));return
-    release=f'RELEASE-{version}.th.md' if f'RELEASE-{version}.th.md' in full else f'RE-AUDIT-{version}.th.md'
-    for required in [release,f'VALIDATION-{version}.th.md','REVIEW-INDEX.md']:
+    release=f'RELEASE-{version}.md' if f'RELEASE-{version}.md' in full else f'RE-AUDIT-{version}.md'
+    for required in [release,f'VALIDATION-{version}.md','REVIEW-INDEX.md']:
         if required not in full:raise ValueError(f'Release document missing: {required}')
     full['MANIFEST.sha256']=manifest_data
     core={name.removeprefix('web-debug/'):data for name,data in full.items() if name.startswith('web-debug/')}

@@ -26,6 +26,12 @@ test('before/after comparison refuses different indexing intent',()=>{
   const make=indexing=>({ok:true,context:{url:'https://example.com/',viewport:{width:390,height:844}},steps:[{type:'seoAudit',ok:true,result:{url:'https://example.com/',viewport:{width:390,height:844},indexingIntent:indexing,checks:[]}}],events:[]});
   assert.equal(compareReports(make('public'),make('private')).comparable,false);
 });
+test('copy review defaults to English and keeps explicit Thai claim detection',()=>{
+  assert.equal(reviewText('Review your booking, then confirm.').language,'en');
+  const localized=reviewText('\u0e23\u0e31\u0e1a\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19 100%','th');
+  assert.equal(localized.language,'th');assert(localized.findings.some(f=>f.code==='claim-needs-evidence'));
+});
+
 test('Thai copy analysis uses word segmentation and preserves the original text',()=>{
   const text='เลือกวันที่คุณสะดวก แล้วกดยืนยันการจอง เราจะส่งรายละเอียดให้ทางอีเมล';
   const result=reviewText(text,'th');assert(result.metrics.words>5);assert.equal(text,'เลือกวันที่คุณสะดวก แล้วกดยืนยันการจอง เราจะส่งรายละเอียดให้ทางอีเมล');

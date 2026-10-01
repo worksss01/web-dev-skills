@@ -2,18 +2,18 @@
 
 Reusable AI skills for web development, debugging, UI/UX, SEO, AEO, and security.
 
-The current skill is **Web Debug 1.6.2**: concise instructions, dependency-free Node.js helpers and direct Chrome DevTools Protocol (CDP) evidence. Chrome control does not require OpenAI or Anthropic browser tools.
+The current skill is **Web Debug 1.6.3**: concise instructions, dependency-free Node.js helpers and direct Chrome DevTools Protocol (CDP) evidence. Chrome control does not require OpenAI or Anthropic browser tools.
 
-[คู่มือภาษาไทย](README.th.md) · [Downloads](https://github.com/worksss01/web-dev-skills/releases/latest) · [Report a problem](https://github.com/worksss01/web-dev-skills/issues/new/choose) · [Report a vulnerability privately](https://github.com/worksss01/web-dev-skills/security/advisories/new)
+[Installation and usage](GUIDE.md) · [Downloads](https://github.com/worksss01/web-dev-skills/releases/latest) · [Report a problem](https://github.com/worksss01/web-dev-skills/issues/new/choose) · [Report a vulnerability privately](https://github.com/worksss01/web-dev-skills/security/advisories/new)
 
 ## Choose your package
 
 | Environment | Package | Installation |
 |---|---|---|
-| Codex | `web-debug-1.6.2.zip` | Copy the extracted `web-debug` folder to `~/.agents/skills/` or the project's `.agents/skills/` |
-| Claude Code | `web-debug-1.6.2.zip` | Copy it to `~/.claude/skills/` or the project's `.claude/skills/` |
-| Claude Cowork | `web-debug-cowork-1.6.2.zip` | Upload the complete ZIP in Skills → Add → Upload skill |
-| Review / project installer | `web-debug-kit-1.6.2.zip` | Includes installer, tests and versioned evidence |
+| Codex | `web-debug-1.6.3.zip` | Copy the extracted `web-debug` folder to `~/.agents/skills/` or the project's `.agents/skills/` |
+| Claude Code | `web-debug-1.6.3.zip` | Copy it to `~/.claude/skills/` or the project's `.claude/skills/` |
+| Claude Cowork | `web-debug-cowork-1.6.3.zip` | Upload the complete ZIP in Skills → Add → Upload skill |
+| Review / project installer | `web-debug-kit-1.6.3.zip` | Includes installer, tests and versioned evidence |
 
 Node.js 22.4+ and a shell are required for helpers. Chrome/Chromium, GitHub CLI, Wrangler and PowerShell are needed only for corresponding tasks. Cowork access to tools and local Chrome depends on its execution environment; an accepted upload does not establish runtime compatibility. See [Cowork runtime](adapters/cowork/references/cowork-runtime.md).
 

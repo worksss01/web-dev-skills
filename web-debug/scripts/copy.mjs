@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {options as parseOptions,required,writeJSON,readText,assertDistinctPaths,printResult} from './common.mjs';
 
-export function reviewText(text,language='th') {
+export function reviewText(text,language='en') {
   if(typeof text!=='string'||text.length>1000000)throw new Error('Copy review requires text under 1 million characters');
   const locale=Intl.getCanonicalLocales(language)[0];
   let words=0,sentences=0;
@@ -25,7 +25,7 @@ export async function main(argv) {
   const options=parseOptions(argv,['file','language','out']);if(options.help){console.log('copy.mjs --file TEXT_OR_MARKDOWN --language th|en|BCP47 [--out JSON]\nLocal editorial cues; no rewriting, uploads or authorship scoring.');return;}
   const file=required(options,'file');if((await fs.stat(file)).size>4000000)throw new Error('Input file exceeds 4 MB');
   await assertDistinctPaths([file],[options.out]);
-  const result=reviewText(await readText(file,4000000),options.language??'th');
+  const result=reviewText(await readText(file,4000000),options.language??'en');
   if(options.out)await writeJSON(required(options,'out'),result);printResult(result,options);
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))main(process.argv.slice(2)).catch(error=>{console.error(JSON.stringify({ok:false,error:error.message}));process.exitCode=1;});

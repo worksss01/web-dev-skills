@@ -1,4 +1,4 @@
-name: "Provider or unknown cause / Provider หรือยังไม่ทราบสาเหตุ"
+name: "Provider or unknown cause"
 description: "Report upstream behavior or a problem whose owner has not been established."
 title: "[Investigation]: "
 labels: ["needs-triage"]
@@ -12,14 +12,14 @@ body:
   - type: textarea
     id: symptom
     attributes:
-      label: "What did you observe? / สิ่งที่ตรวจพบ"
+      label: "What did you observe?"
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: "Web Debug version"
-      placeholder: "For example 1.6.2, or unknown"
+      placeholder: "For example 1.6.3, or unknown"
     validations:
       required: true
   - type: dropdown

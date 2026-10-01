@@ -1,4 +1,4 @@
-name: "Stale or conflicting guidance / ความรู้ล้าสมัย"
+name: "Stale or conflicting guidance"
 description: "Report incorrect instructions, changed APIs or conflicting official sources."
 title: "[Knowledge]: "
 labels: ["needs-triage"]
@@ -12,14 +12,14 @@ body:
   - type: textarea
     id: symptom
     attributes:
-      label: "Which instruction or source is incorrect? / ข้อมูลใดที่ผิด"
+      label: "Which instruction or source is incorrect?"
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: "Web Debug version"
-      placeholder: "For example 1.6.2, or unknown"
+      placeholder: "For example 1.6.3, or unknown"
     validations:
       required: true
   - type: dropdown
