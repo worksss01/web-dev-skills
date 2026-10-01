@@ -385,7 +385,9 @@ async function checkWithPipe(options,plan,base,policy) {
   let browser,output,failure;
   try {
     browser=pipeCDP(child,policy.maxMessageBytes);
-    const version=await browser.send('Browser.getVersion');
+    // Cold hosted runners can take longer than an ordinary page command to
+    // initialize Chrome. Bound startup separately; do not replay page actions.
+    const version=await browser.send('Browser.getVersion',{},45000);
     const {targetId}=await browser.send('Target.createTarget',{url:'about:blank'});
     const {sessionId}=await browser.send('Target.attachToTarget',{targetId,flatten:true});
     const page=browser.session(sessionId);
