@@ -1,0 +1,17 @@
+{
+  "baseVersion": "1.6.1",
+  "variant": "web-debug-cowork",
+  "descriptionCharacters": 155,
+  "archive": "web-debug-cowork-1.6.1.zip",
+  "sha256": "f4d6fdd019a78e114e92208ebbad1d93757bc8910a3d4ebc9d868de004cccdc5",
+  "files": 34,
+  "scriptsUnchanged": 17,
+  "localLinksChecked": 19,
+  "singleSkillRoot": true,
+  "onlyNameAndDescriptionInFrontmatter": true,
+  "coworkUploadTested": false,
+  "coworkExecutionTested": false,
+  "directChromeOnUserMachineVerifiedFromCowork": false,
+  "existingPersonalInstallationsModified": false,
+  "note": "Upload-oriented packaging and runtime-aware instructions. Executable helpers retain the tested base version. Security-scan acceptance and runtime availability require testing in Cowork."
+}

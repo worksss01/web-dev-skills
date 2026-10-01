@@ -1,0 +1,14 @@
+/work/
+/outputs/
+**/node_modules/
+**/__pycache__/
+**/profile-*/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+# Local machine rules and migration records are not part of the public package.
+/AGENTS.md
+/docs/migration-*.json

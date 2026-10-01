@@ -1,0 +1,29 @@
+{
+  "note": "Inspected the actual previously delivered ZIP files in this workspace, not the reviewer's unknown copy. The lean skill ZIP excludes audit/test artifacts by design; the full kit contains them.",
+  "archives": [
+    {
+      "archive": "web-debug-1.5.1.zip",
+      "bytes": 97693,
+      "sha256": "0ebfab68374f0105db8fa0c685d53dc528e1675256ac9bcea3fffc7817ecb42a",
+      "fileCount": 32,
+      "validationDocument": [],
+      "metrics": [],
+      "testEvidence": []
+    },
+    {
+      "archive": "web-debug-kit-1.5.1.zip",
+      "bytes": 225849,
+      "sha256": "62cd60b401b24877e4c85ae364027d28593f50d38a0f7b01832135bde08a1fd1",
+      "fileCount": 78,
+      "validationDocument": [
+        "web-debug-kit/VALIDATION-1.5.1.th.md"
+      ],
+      "metrics": [
+        "web-debug-kit/audit/re-audit-1.5.1-metrics.json"
+      ],
+      "testEvidence": [
+        "web-debug-kit/validation/unit-1.5.1.json"
+      ]
+    }
+  ]
+}

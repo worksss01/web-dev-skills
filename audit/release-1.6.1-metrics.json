@@ -1,0 +1,15 @@
+{
+  "version": "1.6.1",
+  "baseline": "1.6.0",
+  "changedSkillFiles": [
+    "scripts/common.mjs",
+    "scripts/report.mjs"
+  ],
+  "skillFiles": 34,
+  "entryBytes": 5443,
+  "chromeActions": 25,
+  "newRuntimeFiles": [],
+  "newRuntimeFlags": [],
+  "npmDependencies": 0,
+  "note": "Only report redaction behavior and the version identifier changed. Browser/provider runtime code is byte-identical to 1.6.0. Current patch validation is targeted; prior full-suite results retain their original version."
+}

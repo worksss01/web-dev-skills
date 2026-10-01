@@ -1,0 +1,34 @@
+{
+  "version": "1.5.0",
+  "baseline": "1.4.0",
+  "entryBytes": {
+    "before": 4388,
+    "after": 4543
+  },
+  "actions": {
+    "before": 24,
+    "after": 25,
+    "removed": [],
+    "added": [
+      "waitForSelector"
+    ]
+  },
+  "helpers": {
+    "before": 14,
+    "after": 16,
+    "added": [
+      "browser-state.mjs",
+      "pipe.mjs"
+    ]
+  },
+  "references": {
+    "before": 14,
+    "after": 14
+  },
+  "npmDependencies": 0,
+  "notes": [
+    "Inventory verifies presence, not semantic equivalence. Legacy integration cases verify exercised behavior with explicit new permissions.",
+    "Security boundaries require extra implementation; no universal speed or memory improvement is claimed.",
+    "Default protocol-message budget decreases from 256 MB to 32 MB; this is not a process memory cap."
+  ]
+}

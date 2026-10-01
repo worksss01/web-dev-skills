@@ -1,0 +1,28 @@
+{
+  "version": "1.5.3",
+  "testedDateLocal": "2026-09-29",
+  "platform": "Windows 11 / Node 24.18.0",
+  "command": "node --test --test-reporter=tap tests/install-integrity.test.mjs",
+  "results": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "checks": [
+    "Intact manifest verifies all listed files and Unicode/space paths without claiming publisher identity",
+    "Modified skill content is rejected by its manifest hash",
+    "Missing skill or non-skill evidence files are rejected as incomplete extraction",
+    "Missing manifest cannot silently fall back to unchecked installation",
+    "Extra unlisted skill content is rejected before copying",
+    "Duplicate and case-aliased manifest paths are rejected on every OS",
+    "Malformed hashes, traversal, absolute paths, devices and self-entries cannot become package reads",
+    "Manifest entries cannot traverse static file or parent-directory links",
+    "The manifest itself cannot be a link",
+    "Manifest coverage must include the installer and skill entry point",
+    "Changing a file and its manifest can still verify: integrity is not authentication",
+    "Oversized manifest is rejected before parsing its contents",
+    "Installer CLI verifies before importing a damaged skill helper or creating target directories"
+  ],
+  "evidenceSource": "Recorded from the successful 13-case TAP tool output in the current task; duration 252.1463 ms. The test source is included for independent replay."
+}

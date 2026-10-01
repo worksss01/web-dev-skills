@@ -1,0 +1,10 @@
+{
+  "validatedOn": "2026-10-01",
+  "repeatBuildIdentical": true,
+  "packagedManifestVerified": true,
+  "privateRuntimeFilesExcluded": true,
+  "coworkPayloadMatchesPublished1_6_1": true,
+  "existingDifferentArtifactPreserved": true,
+  "originalPublishedArchivesRetained": true,
+  "note": "Rebuilt ZIP container metadata/compression differs from historical published ZIPs; payloads remain equal and the published files were not replaced."
+}

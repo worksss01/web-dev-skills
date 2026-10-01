@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "id": "input-output-collision",
+      "confirmed": true,
+      "exit": 0
+    },
+    {
+      "id": "unknown-option-ignored",
+      "confirmed": true
+    },
+    {
+      "id": "boolean-coerced-to-number",
+      "confirmed": true
+    },
+    {
+      "id": "contradictory-success",
+      "confirmed": true
+    },
+    {
+      "id": "inline-url-payload-exported",
+      "confirmed": true
+    },
+    {
+      "id": "snapshot-junction-escape",
+      "confirmed": true
+    },
+    {
+      "id": "missing-evidence-invalid-date-fresh",
+      "confirmed": true
+    },
+    {
+      "id": "output-symlink-overwrites-target",
+      "confirmed": true
+    },
+    {
+      "id": "malformed-cdp-message-crashes",
+      "confirmed": true
+    }
+  ]
+}

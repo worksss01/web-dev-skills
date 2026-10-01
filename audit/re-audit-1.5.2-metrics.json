@@ -1,0 +1,28 @@
+{
+  "version": "1.5.2",
+  "baseline": "1.5.1",
+  "entryBytes": {
+    "before": 4720,
+    "after": 4720
+  },
+  "skillFiles": {
+    "before": 32,
+    "after": 32
+  },
+  "actions": {
+    "before": 25,
+    "after": 25,
+    "removed": []
+  },
+  "changedFiles": [
+    "references/chrome.md",
+    "references/maintenance.md",
+    "scripts/chrome.mjs",
+    "scripts/common.mjs",
+    "scripts/plan.mjs"
+  ],
+  "addedRuntimeHelpers": [],
+  "addedRuntimeCliFlags": [],
+  "npmDependencies": 0,
+  "note": "The full kit adds test/maintenance artifacts outside the installed skill. Raw domains and file-drag params are deliberately more restricted. Inventory is not semantic equivalence or a runtime performance benchmark."
+}

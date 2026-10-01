@@ -1,0 +1,59 @@
+name: "Stale or conflicting guidance / ความรู้ล้าสมัย"
+description: "Report incorrect instructions, changed APIs or conflicting official sources."
+title: "[Knowledge]: "
+labels: ["needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Public report: do not include secrets, private code, personal data or raw logs.
+        Suspected vulnerabilities: https://github.com/worksss01/web-dev-skills/security/advisories/new
+        English and Thai are welcome. A suspected cause is not a verified diagnosis.
+  - type: textarea
+    id: symptom
+    attributes:
+      label: "Which instruction or source is incorrect? / ข้อมูลใดที่ผิด"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "Web Debug version"
+      placeholder: "For example 1.6.2, or unknown"
+    validations:
+      required: true
+  - type: dropdown
+    id: host
+    attributes:
+      label: "AI environment"
+      options:
+        - Codex
+        - Claude Code
+        - Claude Cowork
+        - Other or unknown
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: "Relevant runtime versions"
+      description: "OS, Node, Chrome or provider version if known. No username or full local paths."
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Reproduction and expected / actual result"
+      description: "Use a minimal synthetic example. Say explicitly if reproduction is not yet available."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Curated evidence or official source"
+      description: "Relevant excerpts and versioned official links only. Do not upload full logs or private repositories."
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Before publishing"
+      options:
+        - label: "I reviewed this report for secrets and private data; it contains no suspected vulnerability details."
+          required: true

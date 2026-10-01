@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-09-29T00:42:51.757Z",
+  "platform": "win32",
+  "node": "v24.18.0",
+  "browser": "Chrome/154.0.8037.57",
+  "caseInsensitiveFilesystem": true,
+  "checks": [
+    "N-1 default debugger activation is refused before opening the page",
+    "N-1 quick observation succeeds on a page containing repeated debugger statements",
+    "N-3 mixed-case output cannot overwrite approved inputs, even with overwrite enabled",
+    "N-3 internal directory aliases cannot bypass the input/output boundary",
+    "N-2 browser file and nested-target methods are rejected before Chrome launch despite raw opt-in",
+    "Advanced diagnostics and regular screenshot output still work with explicit policy recorded"
+  ],
+  "allPassed": true,
+  "count": 6,
+  "baseline": [],
+  "version": "1.6.0"
+}

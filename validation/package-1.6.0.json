@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-09-29T00:42:51.935Z",
+  "checks": [
+    "Install identical skill files for Codex and Claude inside the repository",
+    "Repeat an identical installation without overwriting files",
+    "Preserve existing installations and user edits",
+    "Reject missing installation target",
+    "Refuse review of an outdated or wrong document hash",
+    "Record reviewed hash and review history",
+    "Separate reviewed sources from never-fetched sources",
+    "Report failed refresh and overdue review without erasing prior evidence",
+    "Refuse acknowledgment of a modified snapshot",
+    "Review relocated knowledge from another working directory without the original snapshot",
+    "Read a copied legacy absolute path and normalize it on review",
+    "Migrate Windows and POSIX legacy paths without resetting evidence or review dates",
+    "Migration is repeatable without modifying already portable paths",
+    "A missing copied snapshot prevents partial ledger migration"
+  ],
+  "allPassed": true,
+  "version": "1.6.0"
+}

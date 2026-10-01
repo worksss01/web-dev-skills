@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-09-29T00:59:44.692Z",
+  "sources": 40,
+  "reviewRequired": 40,
+  "reviewOverdue": 40,
+  "snapshotProblems": 0,
+  "fetchErrors": 0,
+  "meaning": "Snapshots are present and match their hashes, but this cache has no completed semantic-review acknowledgments. This does not establish that every source is wrong or deprecated. Verify the relevant claims/installed versions before relying on them; do not claim the full knowledge set is currently certified."
+}

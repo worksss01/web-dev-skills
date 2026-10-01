@@ -1,0 +1,29 @@
+{
+  "findings": [
+    {
+      "id": "fill-empty-does-not-clear",
+      "confirmed": false
+    },
+    {
+      "id": "fill-checkbox-mutates-control",
+      "confirmed": true
+    },
+    {
+      "id": "invisible-ancestor-clicked",
+      "confirmed": true
+    },
+    {
+      "id": "plan-error-after-partial-effects",
+      "confirmed": true
+    },
+    {
+      "id": "trace-lost-on-failure",
+      "confirmed": true
+    },
+    {
+      "id": "unbounded-design-style-scan",
+      "observedStyleCalls": 4500,
+      "confirmed": true
+    }
+  ]
+}

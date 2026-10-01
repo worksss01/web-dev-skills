@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "id": "windows-console-unicode-corruption",
+      "shell": "PowerShell 7",
+      "confirmed": true
+    },
+    {
+      "id": "windows-console-unicode-corruption",
+      "shell": "PowerShell 5.1",
+      "confirmed": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "external-review-as-reported",
+  "sourceDocument": "Re-audit 1.5.2.md",
+  "sourceSha256": "d3ecdbc223ec68374467351a5612ba2a6a2ae706f3cd5d8d18c6ec711a22e7ad",
+  "claimedAuthor": "@JOE888 (as stated in the supplied document)",
+  "versionTested": "1.5.2",
+  "reportedDate": "2026-09-29",
+  "reportedEnvironment": {
+    "os": "Linux",
+    "node": "22.22.2",
+    "browser": "Chromium 141 headless",
+    "wrapper": "--no-sandbox because the reviewer ran as root"
+  },
+  "reportedResults": {
+    "passed": 193,
+    "skipped": 0,
+    "failed": 0,
+    "windowsSmokeRun": false
+  },
+  "reproducedByThisAgent": false,
+  "note": "User-supplied external review; no raw Linux test logs were supplied here. Not counted as our own execution or as validation of the changed 1.5.3 installer."
+}

@@ -1,0 +1,13 @@
+{
+  "testedAt": "2026-09-29T01:55:30.017Z",
+  "platform": "win32",
+  "node": "v24.18.0",
+  "checks": [
+    "Entry point resolves imports from the renamed upload folder",
+    "Report creates a local record with pending triage",
+    "Markdown export succeeds without submission"
+  ],
+  "allPassed": true,
+  "coworkExecutionTested": false,
+  "scope": "Local packaging smoke only; no account upload, no separate Claude session and no remote browser validation."
+}

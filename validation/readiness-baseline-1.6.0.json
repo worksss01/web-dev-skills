@@ -1,0 +1,10 @@
+{
+  "version": "1.6.0",
+  "observedAt": "2026-09-29T00:56:00.577Z",
+  "input": "{\"token\":\"SYNTHETIC_TEST_TOKEN\"}",
+  "once": "{\"token\":[REDACTED]}",
+  "twice": "{\"token\":[REDACTED]",
+  "idempotent": false,
+  "identicalReportSuggestedDuplicate": false,
+  "scope": "Generated fixture values only; no real credentials"
+}

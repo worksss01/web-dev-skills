@@ -1,0 +1,23 @@
+{
+  "testedAt": "2026-09-28T23:42:54.127Z",
+  "browser": "Chrome/154.0.8037.57",
+  "platform": "win32",
+  "checks": [
+    "File drag is rejected before navigation without raw opt-in",
+    "File drag is rejected before navigation with raw opt-in",
+    "Extension/PWA and unknown-domain plans fail before browser navigation",
+    "Actual data-only drag/drop remains functional without a files field",
+    "Actual data-only drag/drop remains functional with an empty files array"
+  ],
+  "count": 5,
+  "allPassed": true,
+  "baseline": [
+    {
+      "id": "N-2-file-drag",
+      "actualSyntheticFileRead": true,
+      "browser": "Chrome/154.0.8037.57",
+      "scope": "A generated fixture file in this work directory; no personal files or external upload"
+    }
+  ],
+  "version": "1.5.2"
+}

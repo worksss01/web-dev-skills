@@ -1,0 +1,19 @@
+{
+  "version": "1.5.3",
+  "baseline": "1.5.2",
+  "skillFiles": 32,
+  "entryBytes": 4720,
+  "actions": 25,
+  "skillChanges": [
+    "scripts/common.mjs"
+  ],
+  "onlySkillChangeIsVersionIdentifier": true,
+  "installerBytes": {
+    "before": 4277,
+    "after": 8115
+  },
+  "addedRuntimeHelpers": [],
+  "addedRuntimeCliFlags": [],
+  "npmDependencies": 0,
+  "note": "This patch changes full-kit installation/integrity, not browser behavior. Old full-suite evidence remains labelled 1.5.2; current validation is targeted."
+}

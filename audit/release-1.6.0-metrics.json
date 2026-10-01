@@ -1,0 +1,27 @@
+{
+  "version": "1.6.0",
+  "baseline": "1.5.3",
+  "skillFiles": {
+    "before": 32,
+    "after": 34
+  },
+  "entryBytes": {
+    "before": 4720,
+    "after": 5443
+  },
+  "addedSkillFiles": [
+    "references/reporting.md",
+    "scripts/report.mjs"
+  ],
+  "changedExistingSkillFiles": [
+    "SKILL.md",
+    "scripts/common.mjs",
+    "scripts/debug.mjs"
+  ],
+  "chromeActions": 25,
+  "removedSkillFiles": [],
+  "npmDependencies": 0,
+  "networkSubmissionImplemented": false,
+  "reportStorage": "project-local JSON records with explicit Markdown handoff",
+  "note": "Reports are user/maintainer declarations. The tool does not autonomously attribute root cause, execute reproduction commands, patch code or submit to a server."
+}

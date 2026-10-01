@@ -1,0 +1,266 @@
+{
+  "testedAt": "2026-09-28T23:42:52.960Z",
+  "browser": "Chrome/154.0.8037.57",
+  "protocolSha256": "fc76caabdeface302d414c2d44d530010d4364bf33bb2bfe878b36cf8199d253",
+  "schemaVersion": {
+    "major": "1",
+    "minor": "3"
+  },
+  "domains": 58,
+  "commands": 661,
+  "candidates": [
+    {
+      "method": "Browser.setDownloadBehavior",
+      "fields": [
+        {
+          "field": "downloadPath",
+          "description": "The default path to save downloaded files to. This is required if behavior is set to 'allow'\nor 'allowAndName'."
+        },
+        {
+          "field": "(command)",
+          "description": "Set the behavior when downloading a file."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Browser.cancelDownload",
+      "fields": [
+        {
+          "field": "(command)",
+          "description": "Cancel a download if in progress"
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "DOM.pushNodeByPathToFrontend",
+      "fields": [
+        {
+          "field": "path",
+          "description": "Path to node in the proprietary format."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "DOM node traversal path, not an OS filesystem path."
+      ]
+    },
+    {
+      "method": "DOM.setFileInputFiles",
+      "fields": [
+        {
+          "field": "files",
+          "description": "Array of file paths to set."
+        },
+        {
+          "field": "(command)",
+          "description": "Sets files for the given file input element."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "Browser file access/download-path methods are not supported in plans, including raw CDP",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "DOM.getFileInfo",
+      "fields": [
+        {
+          "field": "(command)",
+          "description": "Returns file information for the given\nFile wrapper."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "Browser file access/download-path methods are not supported in plans, including raw CDP",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Extensions.loadUnpacked",
+      "fields": [
+        {
+          "field": "path",
+          "description": "Absolute file path."
+        },
+        {
+          "field": "(command)",
+          "description": "Installs an unpacked extension from the filesystem similar to\n--load-extension CLI flags. Returns extension ID once the extension\nhas been installed."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Extensions.uninstall",
+      "fields": [
+        {
+          "field": "(command)",
+          "description": "Uninstalls an unpacked extension (others not supported) from the profile."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "FileSystem.getDirectory",
+      "fields": [
+        {
+          "field": "bucketFileSystemLocator.pathComponents",
+          "description": "Path to the directory using each path component as an array item."
+        },
+        {
+          "field": "(command)",
+          "description": ""
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Input.dispatchDragEvent",
+      "fields": [
+        {
+          "field": "data.files",
+          "description": "List of filenames that should be included when dropping"
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "Dragging local files is not supported in plans, including raw CDP; use data-only drag events",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Network.deleteCookies",
+      "fields": [
+        {
+          "field": "path",
+          "description": "If specified, deletes only cookies with the exact path."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "Cookie URL path attribute, not an OS filesystem path; cookie changes remain privileged raw operations."
+      ]
+    },
+    {
+      "method": "Network.setCookie",
+      "fields": [
+        {
+          "field": "path",
+          "description": "Cookie path."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "Cookie URL path attribute, not an OS filesystem path; cookie changes remain privileged raw operations."
+      ]
+    },
+    {
+      "method": "Network.setCookies",
+      "fields": [
+        {
+          "field": "cookies[].path",
+          "description": "Cookie path."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "Cookie URL path attribute, not an OS filesystem path; cookie changes remain privileged raw operations."
+      ]
+    },
+    {
+      "method": "PWA.launchFilesInApp",
+      "fields": [
+        {
+          "field": "files",
+          "description": ""
+        },
+        {
+          "field": "(command)",
+          "description": "Opens one or more local files from an installed web app identified by its\nmanifestId. The web app needs to have file handlers registered to process\nthe files. The API returns one or more page Target.TargetIDs which can be\nused to attach to via Target.attachToTarget or similar APIs.\nIf some files in "
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "CDP domain is not supported in plans; only selected diagnostic domains are enabled",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Page.setDownloadBehavior",
+      "fields": [
+        {
+          "field": "downloadPath",
+          "description": "The default path to save downloaded files to. This is required if behavior is set to 'allow'"
+        },
+        {
+          "field": "(command)",
+          "description": "Set the behavior when downloading a file."
+        }
+      ],
+      "policyBlocked": true,
+      "policyError": "Browser file access/download-path methods are not supported in plans, including raw CDP",
+      "needsReview": false,
+      "reviewNotes": []
+    },
+    {
+      "method": "Page.setInterceptFileChooserDialog",
+      "fields": [
+        {
+          "field": "(command)",
+          "description": "Intercept file chooser requests and transfer control to protocol clients.\nWhen file chooser interception is enabled, native file chooser dialog is not shown.\nInstead, a protocol event `Page.fileChooserOpened` is emitted."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "Controls chooser interception/cancellation; no file-path input or direct file-read request. Does not establish browser isolation."
+      ]
+    },
+    {
+      "method": "Storage.setCookies",
+      "fields": [
+        {
+          "field": "cookies[].path",
+          "description": "Cookie path."
+        }
+      ],
+      "policyBlocked": false,
+      "policyError": null,
+      "needsReview": false,
+      "reviewNotes": [
+        "Cookie URL path attribute, not an OS filesystem path; cookie changes remain privileged raw operations."
+      ]
+    }
+  ],
+  "needsReview": [],
+  "coverage": {
+    "unresolvedRefs": [],
+    "depthLimited": [],
+    "cyclesSkipped": 4
+  },
+  "note": "Heuristic review of command input names/descriptions and transitive type references. Probe params are validated locally and NEVER sent to Chrome. No findings is not proof of filesystem isolation; unlabelled semantics and future methods can escape this heuristic.",
+  "profilePurged": true,
+  "version": "1.5.2"
+}

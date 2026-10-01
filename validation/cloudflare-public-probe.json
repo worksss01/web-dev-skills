@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "observedAt": "2026-09-28T13:04:31.860Z",
+  "target": "https://developers.cloudflare.com/",
+  "dns": {
+    "A": {
+      "error": "ETIMEOUT"
+    },
+    "AAAA": {
+      "error": "ETIMEOUT"
+    },
+    "CNAME": {
+      "error": "ETIMEOUT"
+    },
+    "systemLookup": {
+      "addresses": [
+        {
+          "address": "104.16.6.189",
+          "family": 4
+        },
+        {
+          "address": "104.16.5.189",
+          "family": 4
+        },
+        {
+          "address": "104.16.3.189",
+          "family": 4
+        },
+        {
+          "address": "104.16.4.189",
+          "family": 4
+        },
+        {
+          "address": "104.16.2.189",
+          "family": 4
+        }
+      ],
+      "note": "OS resolver result, which may use hosts files or platform policy; not an authoritative DNS record/TTL query."
+    }
+  },
+  "hops": [
+    {
+      "url": "https://developers.cloudflare.com/",
+      "method": "HEAD",
+      "status": 200,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a422f46e6bab5fdf-SIN",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html",
+        "vary": "accept-encoding",
+        "strict-transport-security": "max-age=15552000; preload"
+      },
+      "elapsedToHeadersMs": 180.26,
+      "tls": {
+        "authorized": true,
+        "protocol": "TLSv1.3",
+        "validFrom": "Sep 19 11:31:02 2026 GMT",
+        "validTo": "Dec 18 12:30:42 2026 GMT",
+        "issuer": "WE1",
+        "daysUntilExpiry": 80,
+        "note": "Certificate observed at this HTTPS endpoint; it does not verify the Cloudflare-to-origin certificate."
+      }
+    }
+  ],
+  "redirectStop": null,
+  "note": "Read-only diagnostic requests to the selected URL. No authenticated Cloudflare account access, origin discovery, response bodies or cookies. HEAD may behave differently from GET; timings are local observations.",
+  "findings": [
+    {
+      "code": "cloudflare-response-signal",
+      "hop": 0,
+      "detail": "Response headers suggest Cloudflare handled this request; headers are evidence, not identity proof."
+    },
+    {
+      "code": "cache-observation",
+      "hop": 0,
+      "status": "HIT",
+      "detail": "Interpret this response with Cache-Control, Age, request method and cache rules. MISS/BYPASS/DYNAMIC are not automatically bugs."
+    },
+    {
+      "code": "dns-record-query-incomplete",
+      "detail": "Direct A/AAAA queries failed. Compare the OS resolver result and HTTP outcome; this does not alone establish a DNS outage."
+    }
+  ]
+}

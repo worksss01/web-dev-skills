@@ -1,0 +1,31 @@
+{
+  "testedAt": "2026-09-28T23:21:12.246Z",
+  "checks": [
+    "Quick entry-point check needs no plan, saves full evidence, prints compact output and closes Chrome",
+    "L-1 inspect/navigation/context known URL fields redact query values",
+    "Pipe capture begins before initial document scripts and requests",
+    "L-3 automatic observations resist page-world DOM/style overrides",
+    "I-3 URL identity uses a private HMAC key absent from the report",
+    "M-2 pipe check creates no CDP TCP endpoint/session",
+    "M-3 generated state/profile/key files are ignored by Git",
+    "Pipe mode purges its temporary profile and retains comparable HMAC context",
+    "H-1 existing artifact writes require CLI opt-in before browser launch",
+    "H-1 traversal is rejected before any page request",
+    "H-1 input links cannot escape the curated input directory",
+    "Curated file input and explicitly enabled script assertions remain functional",
+    "H-2 non-allowlisted CDP requires an explicit caller flag",
+    "Advanced CDP remains available with an explicit flag and method audit trail",
+    "Read-only mode refuses custom JavaScript",
+    "L-4 oversized eval output is omitted and marked incomplete",
+    "Persistent TCP debugging requires deliberate opt-in",
+    "M-1 external endpoints require explicit consent at the caller",
+    "L-1 tab listing redacts URL query values",
+    "M-1 external browser defaults to observation-only actions",
+    "External observation captures retain comparable private HMAC context within their work directory",
+    "M-3 explicit purge removes only the owned profile"
+  ],
+  "allPassed": true,
+  "transport": "pipe and opt-in TCP",
+  "count": 22,
+  "version": "1.5.1"
+}

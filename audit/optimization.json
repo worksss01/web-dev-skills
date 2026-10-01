@@ -1,0 +1,53 @@
+{
+  "baselineVersion": "1.3.0",
+  "version": "1.4.0",
+  "skillEntry": {
+    "beforeBytes": 8369,
+    "afterBytes": 4388,
+    "reductionPercent": 47.57
+  },
+  "readme": {
+    "beforeBytes": 29200,
+    "afterBytes": 9577,
+    "reductionPercent": 67.2
+  },
+  "browserFixture": {
+    "baselineStyleCalls": 4500,
+    "currentStyleCalls": 1001,
+    "fullReportBytes": 3605,
+    "compactStdoutBytes": 712
+  },
+  "capabilityInventory": {
+    "originalActions": [
+      "accessibility",
+      "assert",
+      "assertEvents",
+      "audit",
+      "cdp",
+      "checkpoint",
+      "click",
+      "designAudit",
+      "eval",
+      "fill",
+      "inspect",
+      "key",
+      "media",
+      "metrics",
+      "navigate",
+      "reload",
+      "screenshot",
+      "seoAudit",
+      "traceStart",
+      "traceStop",
+      "viewport",
+      "wait",
+      "waitEvent",
+      "waitFor"
+    ],
+    "allActionsRetained": true,
+    "originalScriptCount": 12,
+    "allOriginalScriptsRetained": true,
+    "allOriginalReferencesRetained": true
+  },
+  "interpretation": "Size and fixture measurements only; not universal speed/token/quality guarantees. Full saved browser evidence is retained."
+}

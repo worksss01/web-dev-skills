@@ -1,0 +1,16 @@
+{
+  "testedAt": "2026-09-29T00:42:51.504Z",
+  "browser": "Chrome/154.0.8037.57",
+  "platform": "win32",
+  "checks": [
+    "File drag is rejected before navigation without raw opt-in",
+    "File drag is rejected before navigation with raw opt-in",
+    "Extension/PWA and unknown-domain plans fail before browser navigation",
+    "Actual data-only drag/drop remains functional without a files field",
+    "Actual data-only drag/drop remains functional with an empty files array"
+  ],
+  "count": 5,
+  "allPassed": true,
+  "baseline": [],
+  "version": "1.6.0"
+}

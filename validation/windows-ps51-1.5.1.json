@@ -1,0 +1,24 @@
+{
+  "testedAt": "2026-09-28T23:21:11.594Z",
+  "os": {
+    "caption": "Microsoft Windows 11 Home",
+    "version": "10.0.26200",
+    "build": "26200",
+    "architecture": "64-bit"
+  },
+  "powerShell": {
+    "version": "5.1.26100.9444",
+    "edition": "Desktop"
+  },
+  "checks": [
+    "Read the actual Windows product and PowerShell version",
+    "Detect installed tool paths without executing project tools",
+    "Identify the process owning a controlled listening port",
+    "Leave the inspected process and listening port running",
+    "Save valid UTF-8 JSON evidence",
+    "Refuse linked output without modifying its target",
+    "Use multiple ports through the single Node entry point"
+  ],
+  "allPassed": true,
+  "version": "1.5.1"
+}

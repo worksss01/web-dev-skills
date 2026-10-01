@@ -1,0 +1,20 @@
+{
+  "title": "",
+  "kind": "bug",
+  "suspectedOrigin": "unknown",
+  "component": "other",
+  "affectedVersion": "1.6.1",
+  "summary": "",
+  "expected": "",
+  "actual": "",
+  "steps": [],
+  "evidence": [],
+  "environment": {
+    "agent": "unknown",
+    "node": "v24.18.0",
+    "platform": "win32",
+    "browser": "unknown",
+    "provider": "unknown",
+    "providerVersion": "unknown"
+  }
+}

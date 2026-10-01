@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-09-28T23:45:26.836Z",
+  "browser": "Chrome/154.0.8037.57",
+  "checks": [
+    "Empty text fill still clears an input; rejected baseline hypothesis is covered",
+    "Unsupported fill fails before changing a checkbox",
+    "An opacity-zero ancestor prevents pointer interaction",
+    "Focus redirection cannot silently type into another field",
+    "Invalid late actions are rejected before earlier page mutations",
+    "Trace output cannot overwrite its scenario input",
+    "A failed assertion retains the requested parseable trace",
+    "waitFor respects its deadline for a never-resolving promise",
+    "Concurrent owned-browser mutation is rejected before execution",
+    "A scenario without emulation changes preserves another client's viewport",
+    "Truncated console evidence cannot pass an absence assertion",
+    "Design sampling stops early instead of measuring every candidate twice",
+    "One-entry compact mode saves the complete browser evidence"
+  ],
+  "performanceEvidence": {
+    "baselineStyleCalls": 4500,
+    "currentStyleCalls": 1001,
+    "fullReportBytes": 4081,
+    "compactStdoutBytes": 963
+  },
+  "allPassed": true,
+  "version": "1.5.2"
+}

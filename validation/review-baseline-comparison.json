@@ -1,0 +1,96 @@
+{
+  "testedAt": "2026-09-28T15:56:57.909Z",
+  "method": "Validator-only reproduction, no arbitrary file read/write or unsafe browser methods executed",
+  "cases": [
+    {
+      "id": "H-1",
+      "action": {
+        "type": "screenshot",
+        "path": "../../outside.png"
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "Plan paths must be portable relative paths without traversal or absolute roots"
+      }
+    },
+    {
+      "id": "H-1",
+      "action": {
+        "type": "screenshot",
+        "path": "C:\\outside.png"
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "Plan paths must be portable relative paths without traversal or absolute roots"
+      }
+    },
+    {
+      "id": "H-1",
+      "action": {
+        "type": "eval",
+        "file": "../../notes.txt"
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "Plan paths must be portable relative paths without traversal or absolute roots"
+      }
+    },
+    {
+      "id": "H-2",
+      "action": {
+        "type": "cdp",
+        "method": "Page.navigate",
+        "params": {
+          "url": "file:///private"
+        }
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "CDP method requires the explicit CLI flag --allow-raw-cdp"
+      }
+    },
+    {
+      "id": "H-2",
+      "action": {
+        "type": "cdp",
+        "method": "Security.setIgnoreCertificateErrors",
+        "params": {
+          "ignore": true
+        }
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "Disabling browser protections is not supported"
+      }
+    },
+    {
+      "id": "H-2",
+      "action": {
+        "type": "cdp",
+        "method": "Network.getCookies"
+      },
+      "before": {
+        "accepted": true
+      },
+      "after": {
+        "accepted": false,
+        "error": "CDP method requires the explicit CLI flag --allow-raw-cdp"
+      }
+    }
+  ]
+}
