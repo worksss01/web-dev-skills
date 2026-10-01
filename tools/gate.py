@@ -128,7 +128,7 @@ def main():
   return
  commit=git('rev-parse',o.commit+'^{commit}').decode().strip()
  r=inspect(commit,o.assets) if o.command=='inspect' else check(commit,o.note,o.assets) if o.command=='check' else verify(commit,o.assets)
- print(json.dumps(r if o.command=='inspect' else {'passed':r.get('passed'),'commit':commit,'files':len(r.get('inventory',[]))}))
+ print(json.dumps(r if o.command=='inspect' else {'passed':r.get('passed'),'commit':commit,'files':r.get('files',len(r.get('inventory',[])))}))
  if r.get('findings'):sys.exit(1)
 if __name__=='__main__':
  try:main()

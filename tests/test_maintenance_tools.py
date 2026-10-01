@@ -56,6 +56,7 @@ class MaintenanceTools(unittest.TestCase):
   sha=git('rev-parse','HEAD').stdout.strip();(repo/'work').mkdir();note=repo/'work/review.json'
   note.write_text(json.dumps({'commit':sha,'pcAccessReviewed':True,'privacyReviewed':True,'scopeReviewed':True,'rationale':'Controlled synthetic fixture with no network services, credentials, personal information or unrelated content. This attests only the hook protocol test.'}))
   checked=subprocess.run([os.sys.executable,str(script),'check','--note',str(note)],cwd=repo,capture_output=True,text=True);self.assertEqual(checked.returncode,0,checked.stderr)
+  verified=subprocess.run([os.sys.executable,str(script),'verify'],cwd=repo,check=True,capture_output=True,text=True);self.assertEqual(json.loads(verified.stdout)['files'],len(git('ls-files').stdout.splitlines()))
   git('push','origin','main')
   (repo/'README.md').write_text('Changed after the previous reviewed receipt');git('add','README.md');git('commit','-m','Synthetic change')
   self.assertNotEqual(git('push','origin','main',ok=False).returncode,0)
