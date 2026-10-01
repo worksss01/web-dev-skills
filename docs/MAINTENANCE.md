@@ -46,6 +46,8 @@ node tools/evaluate.mjs self-test --out work/eval-controls
 
 Give only the candidate task and index.html to the agent being evaluated, without reference solutions or grader source. Preserve its edits, explanation, tool trace and runtime version. Review candidate HTML before any local browser execution; grade requires its exact reviewed SHA-256. Use an isolated host for untrusted candidates. Grading captures fresh Chrome evidence through direct CDP. Baseline/reference controls prove the grader distinguishes those cases, not that an independent AI solved them. Manual prompt-injection/AEO rubrics remain separately reviewed and never receive a fabricated automatic pass.
 
+For creation/redesign, use [brief-only design cases](../evals/design-briefs.md). They separate functional gates from visual observations and distinguish author walkthroughs from independent model evaluations. Compare actual rendered outputs across multiple tasks/attempts before claiming broad improvement; the existing browser self-test is not a design-quality benchmark.
+
 ## 5. Signed release and delivery
 
 After the content gate and exact-commit CI pass, build the three ZIPs. Sign the core update payload with the private maintainer key stored outside Git:

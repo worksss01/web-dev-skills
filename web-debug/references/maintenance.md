@@ -1,6 +1,6 @@
 # Maintaining current knowledge
 
-The edition date is **2026-09-28**. The bundle contains diagnostic guidance and links consulted on that date. It is not a web-platform snapshot, a complete catalog of new features, or a change to model weights. Current decisions come from the project's installed versions, observed browser behavior and relevant official documentation.
+The base edition date is **2026-09-28**; individual references record later reviews where applicable. The bundle is not a web-platform snapshot, a complete catalog of new features, or a change to model weights. Current decisions come from the project's installed versions, observed browser behavior and relevant official documentation.
 
 ## Refresh triggers
 
@@ -61,5 +61,7 @@ The bundle does not install a scheduler or run in the background. Refresh occurs
 On network failure, authentication/challenge content, moved documentation or an unknown version, keep the prior evidence and mark the current claim unverified. Check official redirects/release notes or a local installed API definition. If offline, prefer a reproducible feature test and explicitly bound the conclusion to the tested runtime. Do not claim that a successful HTTP request makes the knowledge current.
 
 ## Version-bound claims
+
+Visual references use a separate kind of evidence: the selected URL, inspection date, viewport/state and observed composition. A JavaScript gallery may yield only a shell to the fetcher. Do not acknowledge appearance from that snapshot or turn a stylistic preference into a version-bound API fact. Revisit relevant rendered examples when needed, retaining source scope and distinguishing observations from promotional descriptions. Existing visual-reference dates do not imply all examples were retested during every maintenance run.
 
 Use `knowledge record --out CACHE --input REVIEW.json` to record a semantically reviewed claim tied to a source hash and supporting quote. Use `knowledge assess --out CACHE --versions OBSERVED.json` to check freshness and applicability to exact observed versions. Decisions include verified, deprecated, conflict and needs-review. Different applicable claims are potential conflicts, not automatically proven contradictions. Records retain prior review history. Fetching, quote matching and signatures do not replace semantic review.

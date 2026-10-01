@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "skillVersion": "1.8.0",
+  "date": "2026-10-01",
+  "attemptType": "author-walkthrough",
+  "independentAgentEvaluation": false,
+  "ownerVisualAcceptance": "not-assessed-for-these-outputs",
+  "runtime": {"os": "Windows", "node": "24.18.0", "browser": "Chrome/154.0.8037.59"},
+  "cases": ["product-launch", "support-workspace"],
+  "viewportsCssPx": [1440, 1024, 390],
+  "assertionsPassed": 20,
+  "assertionsFailed": 0,
+  "screenshotsCaptured": 12,
+  "initialScreenshotsViewed": 12,
+  "affectedFinalViewsReinspected": true,
+  "profilePurged": true,
+  "externalServicesCalledByDemo": false,
+  "artifactsDistributedInSkill": false,
+  "productHtmlSha256": "683a6dacd7f0ec115dd7faf2cb68e3abf0b791ae2ebaf893c5661d05465047eb",
+  "workspaceHtmlSha256": "5fb154731ef1ea85589fce070dd389a96ea2f0e0d1de6c7794ed31725db35383",
+  "unassessed": ["independent-model-comparison", "other-design-briefs", "live-cowork", "cross-browser", "real-mobile-hardware", "assistive-technology", "field-performance"],
+  "note": "Functional evidence and author visual observations are separate. These walkthroughs do not establish automatic aesthetic superiority or full accessibility compliance."
+}

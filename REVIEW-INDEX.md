@@ -1,7 +1,10 @@
-# Web Debug 1.7.0 — full review kit
+# Web Debug 1.8.0 — full review kit
 
-This is the full kit for code review and verification. The separate `web-debug-1.7.0.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. Version 1.7 adds publication gates, isolated reproduction, version-bound knowledge reviews, evaluation controls, signed local updates and reviewed report delivery.
+This is the full kit for code review and verification. The separate `web-debug-1.8.0.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. Version 1.8 adds short-brief design guidance and dated visual references while preserving the diagnostic and maintenance workflows.
 
+- [1.8.0 release](RELEASE-1.8.0.md)
+- [1.8.0 validation](VALIDATION-1.8.0.md)
+- [Design evaluation cases](evals/design-briefs.md)
 - [1.7.0 release](RELEASE-1.7.0.md)
 - [1.7.0 validation](VALIDATION-1.7.0.md)
 - [Reporting release and ownership model](RELEASE-1.6.0.md)
@@ -23,4 +26,4 @@ This is the full kit for code review and verification. The separate `web-debug-1
 - [Inventory of the previous 1.5.1 ZIPs](validation/zip-1.5.1-inventory.json)
 - [Installation and migration](GUIDE.md)
 
-`MANIFEST.sha256` covers the content of this kit and is checked before installation. The ZIP also has a sibling `.sha256` file. These establish integrity relative to an expected checksum, not publisher identity when all files come from the same untrusted source. Obtain the expected archive SHA-256 through the trusted handoff conversation or another authenticated channel before extracting/running code. No publisher signature is included. Review the evidence files and test code, not just the stated test total. Older reports remain versioned history.
+`MANIFEST.sha256` covers the content of this kit and is checked before installation. The ZIP also has a sibling `.sha256` file. These establish integrity relative to an expected checksum, not publisher identity when all files come from the same untrusted source. Obtain the expected archive SHA-256 through the trusted handoff conversation or another authenticated channel before extracting/running code. ZIP sidecars are checksums; the separate core update payload is publisher-signed. See the update documentation for trust and migration limits. Review the evidence files and test code, not just the stated test total. Older reports remain versioned history.

@@ -1,15 +1,15 @@
 ---
 name: web-debug
-description: Develop, debug and review websites with direct Chrome evidence. Covers UI/design, SEO/AEO, natural web copy, defensive security, performance, Cloudflare, GitHub CI and Windows 11 web-development issues. Report defects in this skill through local files.
+description: Design distinctive websites from short briefs, develop and debug them with direct Chrome evidence. Covers responsive UI, SEO/AEO, web copy, defensive security, performance, Cloudflare, GitHub CI and Windows 11. Report skill defects through local files.
 ---
 
 # Web Debug
 
-Work from a reproducible symptom to evidence, a focused fix and a replay of the original case. Preserve the project's stack, design system, facts and existing user work. Respond in the user's language. Do not run every audit for a small task.
+For website creation or redesign, use [Design](references/website-design.md) to infer a brief, choose a visual direction and refine the rendered work. For bugs, work from a reproducible symptom to evidence, a focused fix and a replay. Preserve the project's stack, facts and existing user work; retain its design system unless redesign is requested. Respond in the user's language. Scale the workflow to the task.
 
 ## Start
 
-Read project instructions, actual installed versions and existing run/test commands. Use `node <skill-dir>/scripts/debug.mjs <command> --help` for the relevant tool; resolve `<skill-dir>` from this file. Node 22.4+ and a local shell are required; Chrome, gh, Wrangler and PowerShell are needed only for their respective workflows.
+Read project instructions, actual installed versions and existing run/test commands. Use `node <skill-dir>/scripts/debug.mjs <command> --help` for the relevant tool; resolve `<skill-dir>` from this file. Helpers require Node 22.4+ and a local shell; Chrome, gh, Wrangler and PowerShell are needed only for their respective workflows.
 
 Run from the project root and keep evidence in its approved work area. Start browser observation with `node <skill-dir>/scripts/debug.mjs chrome check --url URL --out work/check.json`: a private pipe, temporary profile, automatic cleanup and no plan required. With `--out`, stdout is compact; `--full` restores full stdout. Use the Chrome reference for interactive scenarios or a persistent browser.
 
@@ -22,7 +22,8 @@ Read only what the task needs, usually one reference to start.
 | Browser actions, console/network, screenshots, trace | [Chrome](references/chrome.md) — `chrome` |
 | Code/build/framework diagnosis | [Web diagnosis](references/web-diagnosis.md) — `project` |
 | Difficult bugs, event assertions, before/after evidence | [Investigation](references/advanced-investigation.md) — `analyze` |
-| Design and responsive interactions | [Design](references/website-design.md), [UI diagnosis](references/ui-design.md) — `designAudit` |
+| New website, short design brief or redesign | [Design](references/website-design.md); consult relevant [patterns and references](references/design-patterns.md) |
+| Focused visual defects and responsive interactions | [UI diagnosis](references/ui-design.md) — `designAudit` |
 | Search metadata and index intent | [SEO](references/seo.md) — `seoAudit` |
 | Grounded answers for answer engines | [AEO](references/aeo.md) |
 | Natural Thai/English copy that preserves meaning | [Language](references/natural-language.md) — `copy` |

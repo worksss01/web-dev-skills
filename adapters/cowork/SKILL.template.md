@@ -1,11 +1,11 @@
 ---
 name: web-debug-cowork
-description: "Review and debug websites in Cowork: code, UI, SEO/AEO, security and defect reports. Use direct Chrome CDP only when the execution environment supports it."
+description: "Design websites from short briefs and debug code, UI, SEO/AEO and security in Cowork. Use direct Chrome CDP only when the execution environment supports it."
 ---
 
 # Web Debug for Cowork
 
-Work from a reproducible symptom to evidence, a focused fix and a replay of the original case. Preserve the project's stack, design system, facts and existing user work. Respond in the user's language. Do not run every audit for a small task.
+For website creation or redesign, use [Design](references/website-design.md) to infer a brief, choose a visual direction and refine the rendered work. For bugs, work from a reproducible symptom to evidence, a focused fix and a replay. Preserve the project's stack, facts and existing user work; retain its design system unless redesign is requested. Respond in the user's language. Scale the workflow to the task.
 
 Base helper version: **{{VERSION}}**. This is a Cowork upload adaptation; its executable scripts are unchanged. Upload acceptance, Cowork runtime execution and direct access to a user's Chrome have not yet been validated in Cowork.
 
@@ -24,7 +24,8 @@ Read only what the task needs, usually one reference to start.
 | Browser actions, console/network, screenshots, trace | [Chrome](references/chrome.md) — `chrome` |
 | Code/build/framework diagnosis | [Web diagnosis](references/web-diagnosis.md) — `project` |
 | Difficult bugs, event assertions, before/after evidence | [Investigation](references/advanced-investigation.md) — `analyze` |
-| Design and responsive interactions | [Design](references/website-design.md), [UI diagnosis](references/ui-design.md) — `designAudit` |
+| New website, short design brief or redesign | [Design](references/website-design.md); consult relevant [patterns and references](references/design-patterns.md) |
+| Focused visual defects and responsive interactions | [UI diagnosis](references/ui-design.md) — `designAudit` |
 | Search metadata and index intent | [SEO](references/seo.md) — `seoAudit` |
 | Grounded answers for answer engines | [AEO](references/aeo.md) |
 | Natural Thai/English copy that preserves meaning | [Language](references/natural-language.md) — `copy` |

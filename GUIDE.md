@@ -1,8 +1,8 @@
-# Web Debug 1.7.0 — installation and usage
+# Web Debug 1.8.0 — installation and usage
 
 Web Debug supports Codex and Claude Code with shared instructions and dependency-free Node.js helpers. A separate Cowork ZIP adapts instructions while retaining identical executable helpers. Browser evidence uses direct Chrome CDP, without provider browser-control tools.
 
-Version 1.7.0 adds publication checks, isolated reproductions, version-bound knowledge reviews, evaluation cases, opt-in signed updates and reviewed report delivery. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.7.0.md), [validation](VALIDATION-1.7.0.md) and [reporting](web-debug/references/reporting.md).
+Version 1.8.0 adds a short-brief design workflow, concrete art direction, dated visual references and separate visual/functional review. Existing publication checks, isolated reproductions, knowledge review, signed updates and report delivery remain available. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.8.0.md), [validation](VALIDATION-1.8.0.md) and [reporting](web-debug/references/reporting.md).
 
 ## Capabilities
 
@@ -10,29 +10,29 @@ Version 1.7.0 adds publication checks, isolated reproductions, version-bound kno
 |---|---|
 | Web debugging | Project versions, build/runtime/hydration/network diagnosis and before/after comparison |
 | Direct Chrome | Tabs, clicking, filling, keyboard, DOM/AX, console/network, screenshots and traces |
-| Website design / UI | Responsive layout, typography, interaction, overflow, controls and bounded contrast checks with visual review |
+| Website design / UI | Short-brief art direction, visual references, typography/assets/composition, responsive interactions and bounded measurements with screenshot review |
 | SEO / AEO | Metadata, canonical, robots/indexing intent, JSON-LD and clear evidence-backed answers |
 | Natural copy | Preserve facts/voice, review repetition, claims and CTA labels across supported languages |
 | Cybersecurity | Defensive review and passive security-header/cookie-attribute checks |
 | Cloudflare | DNS/TLS/cache, edge/origin and Workers/Pages/Wrangler guidance |
 | GitHub | PR/CI metadata through gh, comparing commit SHA and run attempt |
 | Windows 11 | PowerShell, PATH, ports and Windows/WSL boundaries |
-| Maintainable knowledge | 40 official sources with snapshots/hashes and semantic review distinct from fetching |
+| Maintainable knowledge | Curated technical sources and dated visual references; snapshots/hashes are distinct from semantic or visual review |
 | Skill reports | Record defects, establish ownership, request evidence, track fixes and export reviewed reports |
 
-Node.js 22.4+ and a shell are required. Chrome, gh, Wrangler and PowerShell are needed only for relevant tasks. The skill does not install prerequisites or log in automatically. A cloud runtime does not automatically access Chrome on the user's PC.
+Node.js 22.4+ and a shell are required for helpers. Chrome, gh, Wrangler and PowerShell are needed only for relevant tasks. The skill does not install prerequisites or log in automatically. A cloud runtime does not automatically access Chrome on the user's PC.
 
 ## Installation
 
-Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.7.0.zip` contains the skill and a package notice; `web-debug-kit-1.7.0.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.7.0.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
+Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.8.0.zip` contains the skill and a package notice; `web-debug-kit-1.8.0.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.8.0.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
 
 Compare the ZIP SHA-256 against the trusted release/handoff before extracting and running code:
 
 ```powershell
-Get-FileHash -LiteralPath .\web-debug-kit-1.7.0.zip -Algorithm SHA256
+Get-FileHash -LiteralPath .\web-debug-kit-1.8.0.zip -Algorithm SHA256
 ```
 
-A checksum downloaded alongside a ZIP is not an independent trust anchor if both can be replaced. The manifest verifies integrity, not publisher identity; this release has no publisher signature.
+A checksum downloaded alongside a ZIP is not an independent trust anchor if both can be replaced. The manifest verifies integrity, not publisher identity. The separate signed core update payload has its own trust and enrollment requirements; see [managed updates](docs/UPDATES.md).
 
 Copy the lean folder to your host's user/project skill location, or run the full-kit installer from its extracted directory:
 

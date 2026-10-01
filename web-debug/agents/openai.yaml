@@ -1,6 +1,6 @@
 interface:
   display_name: "Web Debug"
-  short_description: "Debug modern websites using direct Chrome evidence"
-  default_prompt: "Use $web-debug to reproduce this website issue in Chrome, identify the cause, and verify a focused fix."
+  short_description: "Design and debug websites with direct Chrome evidence"
+  default_prompt: "Use $web-debug to design or improve this website, choose a direction suited to its purpose, and verify the result in Chrome."
 policy:
   allow_implicit_invocation: true

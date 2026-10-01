@@ -2,7 +2,7 @@
 
 Reusable AI skills for web development, debugging, UI/UX, SEO, AEO, and security.
 
-The current skill is **Web Debug 1.7.0**: concise instructions, dependency-free Node.js helpers and direct Chrome DevTools Protocol (CDP) evidence. Chrome control does not require OpenAI or Anthropic browser tools.
+The current skill is **Web Debug 1.8.0**: concise instructions, dependency-free Node.js helpers and direct Chrome DevTools Protocol (CDP) evidence. Chrome control does not require OpenAI or Anthropic browser tools.
 
 [Installation and usage](GUIDE.md) · [Downloads](https://github.com/worksss01/web-dev-skills/releases/latest) · [Report a problem](https://github.com/worksss01/web-dev-skills/issues/new/choose) · [Report a vulnerability privately](https://github.com/worksss01/web-dev-skills/security/advisories/new)
 
@@ -10,10 +10,10 @@ The current skill is **Web Debug 1.7.0**: concise instructions, dependency-free 
 
 | Environment | Package | Installation |
 |---|---|---|
-| Codex | `web-debug-1.7.0.zip` | Copy the extracted `web-debug` folder to `~/.agents/skills/` or the project's `.agents/skills/` |
-| Claude Code | `web-debug-1.7.0.zip` | Copy it to `~/.claude/skills/` or the project's `.claude/skills/` |
-| Claude Cowork | `web-debug-cowork-1.7.0.zip` | Upload the complete ZIP in Skills → Add → Upload skill |
-| Review / project installer | `web-debug-kit-1.7.0.zip` | Includes installer, tests and versioned evidence |
+| Codex | `web-debug-1.8.0.zip` | Copy the extracted `web-debug` folder to `~/.agents/skills/` or the project's `.agents/skills/` |
+| Claude Code | `web-debug-1.8.0.zip` | Copy it to `~/.claude/skills/` or the project's `.claude/skills/` |
+| Claude Cowork | `web-debug-cowork-1.8.0.zip` | Upload the complete ZIP in Skills → Add → Upload skill |
+| Review / project installer | `web-debug-kit-1.8.0.zip` | Includes installer, tests and versioned evidence |
 
 Node.js 22.4+ and a shell are required for helpers. Chrome/Chromium, GitHub CLI, Wrangler and PowerShell are needed only for corresponding tasks. Cowork access to tools and local Chrome depends on its execution environment; an accepted upload does not establish runtime compatibility. See [Cowork runtime](adapters/cowork/references/cowork-runtime.md).
 
@@ -33,7 +33,9 @@ Ask Codex to use `$web-debug`, Claude Code to use `/web-debug`, or select `web-d
 
 > Use Web Debug to reproduce the broken signup flow, identify the cause from code and direct Chrome evidence, fix it, and verify the same flow again.
 
-Covers code/runtime diagnosis, responsive design, accessibility checks, SEO/AEO, natural web copy, defensive security, performance, Cloudflare, GitHub CI and Windows 11. Only references relevant to the task are loaded.
+For a new site, a short brief such as “Create a contemporary launch page for a compact desktop speaker” starts the design workflow. The agent chooses appropriate references, composition, typography and assets, then reviews actual rendered views. Existing brands and small fixes keep their scope.
+
+Also covers code/runtime diagnosis, responsive interactions, accessibility checks, SEO/AEO, natural web copy, defensive security, performance, Cloudflare, GitHub CI and Windows 11. Only relevant references are loaded. Visual guidance is not a guarantee of aesthetic quality; missing browser or asset access is reported honestly.
 
 ## Report a problem
 

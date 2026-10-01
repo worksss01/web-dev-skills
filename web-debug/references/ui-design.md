@@ -27,4 +27,14 @@ Responsive behavior includes navigation, touch target usability, readable line l
 
 ## Finish criteria
 
+### Interpret the design measurements
+
+Add `{"type":"designAudit"}` to a Chrome plan at the viewport/state under review. It inventories visible font families/sizes, small-control candidates and a conservative subset of computed text contrast. It scans at most 500 selected visible elements and reports truncation.
+
+Contrast is computed only when text has its own opaque RGB background and foreground and the inspected ancestry has no gradients/images, shadows, filters, opacity or blend effects. Complex samples are skipped, not assigned a made-up ratio. This is not a full rendered-pixel analysis of overlap, pseudo-elements or all accessibility requirements. Verify the actual screenshot and use established tools/manual checks as appropriate. [Contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+
+Controls below 24 CSS pixels in either dimension are review candidates. Spacing, inline-link, native-control and equivalent-target exceptions need context; do not label every small control a violation. [Target-size guidance](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
+
+### Replay the affected case
+
 Compare before and after at the same viewport/data state. Reproduce the actual user action and inspect the resulting pixels and accessible state. Report tested dimensions and states, with any unverified device/assistive-technology behavior. Do not expand a small UI fix into a complete redesign or claim visual verification without viewing the image.

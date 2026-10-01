@@ -1,27 +1,51 @@
-# Website design: intent, hierarchy and interactive quality
+# Website design from a short brief
 
-For design work, identify the page's user, primary task, content, brand constraints and success state. Inspect the existing design system and references before choosing visual changes. When a missing preference matters, ask about the intended direction while completing independent layout/content work.
+Use for new websites, substantial page creation and requested redesign. For a focused visual defect, use [UI diagnosis](ui-design.md) and retain the existing system. A lightweight skill can still produce visually ambitious work; do not confuse low instruction/tool overhead with a requirement for a plain website.
 
-## Design from the task
+## Infer the brief and choose a direction
 
-Create a coherent information hierarchy: what the user must understand first, what supports that decision, the main action and what happens afterward. Keep meaningful content and truthful conditions visible. Avoid decorative sections, repetitive cards, excessive badges or animation that do not serve the product.
+Read the request, existing pages/components, brand constraints and permitted assets. Identify the audience, main action, content hierarchy, language and necessary states. Reuse the project's design system unless redesign is requested. Infer reversible visual choices rather than sending a font/color/spacing questionnaire. Ask when an unknown materially changes the product or its factual content, while progressing independent work.
 
-Reuse existing tokens for color, typography, spacing, radii and elevation. For a new system, define a small consistent set driven by content and brand; do not copy a public design system's identity or force every website into the same visual template. Use references for principles such as reusable styles and consistency. [GOV.UK design styles](https://design-system.service.gov.uk/styles/).
+Choose the page's job before the visual language. Marketing, commerce, reading, booking and operational work need different structures; one site may contain several. Consult only relevant entries in [patterns and visual references](design-patterns.md). Treat style names as search vocabulary, not a complete specification.
 
-Build responsive layouts around content constraints and readable density. Include intermediate widths, long real content and the relevant form/navigation states. Choose native semantics and components whose focus, keyboard and error behavior fit the interaction. Consult [UI diagnosis](ui-design.md) for specific failure checks.
+For substantial design work, inspect a small set of relevant rendered references when available, starting with any the user supplied. Record the useful mechanism: composition, type, imagery, depth or interaction. Inspect the actual page and relevant scroll/state changes; a thumbnail or promotional description is insufficient evidence of the whole design. If reference access is unavailable, disclose that and choose a coherent original direction from available evidence.
 
-## Pair measurements with visual review
+Consider alternatives when the direction is uncertain and choose one. Alternatives should differ in composition or experience, not just palette. This need not create extra artifacts, agent sessions or paid calls. Briefly explain the chosen direction and its fit. Do not require the user to art-direct every component.
 
-Add `{"type":"designAudit"}` to a Chrome plan at the viewport/state being reviewed. It inventories visible font families/sizes, small control candidates and a conservative subset of computed text contrast. It scans at most 500 selected visible elements and reports truncation.
+## Make the visual decisions concrete
 
-Contrast is computed only when the element has its own opaque RGB background and text color and the inspected ancestry has no gradients/images, shadows, filters, opacity or blend effects. Complex samples are skipped, not assigned a made-up ratio. This is not a complete analysis of rendered pixels, overlapping elements, pseudo-elements or all accessibility requirements. Verify the actual screenshot and use established accessibility tooling/manual checks where appropriate. [Contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+Use existing project notes or a concise working note to prevent drift across screens. Include only decisions useful to this task:
 
-Controls smaller than 24 CSS pixels in either dimension are review candidates. Spacing, inline-link, native-control and equivalent-target exceptions require context; do not label every small control a WCAG violation. [Target-size guidance](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
+- Primary action, content order and the facts/assets available to support them.
+- A clear visual idea and focal point: a product scene, expressive type, an inspectable demonstration or another appropriate composition.
+- Typography character, scale contrast, intended line breaks, reading measure and script-aware fallback.
+- Grid and alignment axes, occupied/quiet areas, purposeful overlap, color roles and surface/depth treatment.
+- Image subject, lighting, material, crop, focal position and space for text; provenance and missing assets.
+- Narrow-screen recomposition and the rhythm of subsequent sections or task states.
+- Meaningful motion: trigger, beginning/middle/end compositions, interruption and reduced-motion/static behavior.
 
-Inspect screenshots for hierarchy, alignment, rhythm, font rendering, clipping, density, visual balance and whether the main action is clear. Review the real interaction for focus, feedback, validation and recovery. A screenshot cannot establish working behavior, and a DOM audit cannot establish that a page looks good.
+For example, “premium” leaves decisions open; a specific product image with controlled light, large restrained type, an intentional crop and fine specification rows can form a direction. These are choices to resolve, not mandatory ingredients or universal pixel values. Keep project-specific preferences and private assets in that project, not in the distributed skill or cross-project memory.
 
-## Deliver a reviewable change
+## Build and refine a representative slice
 
-Explain the design decision in terms of the user's task and observed problem. Show the implemented result at representative sizes and relevant states. Preserve established brand/content requirements and call out unresolved preferences instead of silently changing them. For a requested redesign, make the intended new system coherent across components rather than applying isolated visual tricks.
+For substantial work, resolve the opening plus one meaningful following section, or the core task and its next state, before extending the design. Solve the main image and type treatment early enough to judge the result honestly. Use authentic available assets or acquire/create suitable assets through task-authorized tools; check provenance and licensing. Do not replace a visually essential product image with an unrelated stock image or crude placeholder merely for convenience. When assets are unavailable, state the limitation and compose effectively with what exists.
 
-There is no automatic beauty score. Use explicit criteria, visual comparison and task completion, and distinguish a measured defect from a subjective preference.
+Inspect the slice at wide and narrow sizes. Give the reader a deliberate entry point and change visual intensity as the content develops. Related sections can differ in density, scale and alignment. Tune optical alignment, font rendering, crop, borders, shadows, icons and control states. Distinctive design comes from these relationships, not a requirement to add effects everywhere.
+
+Bento groupings, oversized type, gradients, serif accents, translucency and familiar layouts are optional techniques. Avoid repeating the same hero/badges/three-card sequence for unrelated products. Do not turn a reaction against generic output into blanket bans on a color, font family or component. Preserve useful conventions and match the actual brief.
+
+Use the existing stack and appropriate semantic controls. A new framework or animation package needs a concrete benefit. Use intrinsic sizing, fluid type and component-level responsiveness where useful. Check specific feature support against target browsers; container-query variants and transition APIs do not all share one support level. [Container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries), [View Transitions](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API).
+
+Motion should connect understandable states or demonstrate the product. Inspect beginning, intermediate and settled states; preserve native scrolling, interruption and a usable reduced-motion/static composition. Avoid hiding necessary content until animation runs. Keep a functional fallback when an enhancement is unavailable.
+
+Write specific, natural copy in the requested language using [language guidance](natural-language.md) as needed. Never invent customer logos, testimonials, prices, stock or business claims to fill a layout. Clearly label synthetic prototype content; a local demo must not imply a payment, booking or message was submitted. English skill instructions do not force English websites. Inspect actual Thai/complex-script glyphs and wrapping when relevant.
+
+## Review pixels and behavior separately
+
+Use [direct Chrome](chrome.md) when the execution runtime supports it. Capture and actually view representative narrow, intermediate and wide layouts and relevant states. Missing browser or image access is a verification gap. Do not silently substitute provider browser control or claim an unseen screenshot was reviewed.
+
+Judge visual craft against the selected direction: recognizable focal idea, appropriate text/media relationship, intentional typography/assets, coherent details, useful section rhythm and a considered narrow composition. Compare with relevant reference mechanisms without treating pixel similarity as the goal. A recolored default layout can pass functional checks while still missing a requested distinctive redesign.
+
+Then verify the primary action, keyboard/focus behavior, long content and affected loading/error states using [UI diagnosis](ui-design.md). Preserve security, privacy and index intent across the redesign. DOM measurements identify candidates; they cannot establish aesthetic quality or full accessibility. No automatic beauty score is provided.
+
+Fix the largest observed discrepancy, recapture affected views, and stop when the scoped criteria are met or a material limitation remains. Scale iteration to the task; do not redesign unrelated areas or accumulate polish indefinitely. Deliver concise rationale, actual tested dimensions/states and unresolved facts/assets. Keep measured defects, subjective judgments and unverified behavior distinct.
