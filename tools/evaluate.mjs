@@ -3,6 +3,7 @@ import {fileURLToPath} from 'node:url';import {createHash,randomUUID} from 'node
 import {execFile} from 'node:child_process';import {promisify} from 'node:util';
 import {cases,manualCases} from '../evals/catalog.mjs';
 import {options,required,writeJSON,readText} from '../web-debug/scripts/common.mjs';
+import {redactText} from '../web-debug/scripts/report.mjs';
 const root=fileURLToPath(new URL('..',import.meta.url)),hash=b=>createHash('sha256').update(b).digest('hex');
 async function workspace(output){const dir=path.resolve(output);if(!dir.startsWith(path.join(root,'work')+path.sep))throw new Error('Evaluation outputs must stay under project work/');await fs.mkdir(dir,{recursive:true});return dir;}
 export async function grade(id,html,output){
@@ -11,9 +12,9 @@ export async function grade(id,html,output){
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const plan=path.join(run,'plan.json'),capture=path.join(run,'capture.json');await writeJSON(plan,{name:id,actions:c.actions});
  let error=null;
- try{await promisify(execFile)(process.execPath,[path.join(root,'web-debug/scripts/debug.mjs'),'chrome','check','--url',`http://127.0.0.1:${server.address().port}/`,'--plan',plan,'--allow-script','--out',capture,'--state-dir',path.join(run,'chrome')],{cwd:root,windowsHide:true,timeout:60000,maxBuffer:1_000_000,env:{...process.env,WEB_DEBUG_UPDATE_CHECKED:'1'}});}catch(e){error='Browser check did not complete successfully';}
+ try{await promisify(execFile)(process.execPath,[path.join(root,'web-debug/scripts/debug.mjs'),'chrome','check','--url',`http://127.0.0.1:${server.address().port}/`,'--plan',plan,'--allow-script','--out',capture,'--state-dir',path.join(run,'chrome')],{cwd:root,windowsHide:true,timeout:60000,maxBuffer:1_000_000,env:{...process.env,WEB_DEBUG_UPDATE_CHECKED:'1'}});}catch(e){error=redactText(String(e.stderr||e.code||'Browser check failed')).slice(0,2000);await writeJSON(path.join(run,'runner-error.json'),{error,signal:e.signal??null});}
  finally{await new Promise(resolve=>server.close(resolve));}
- let report;try{report=JSON.parse(await fs.readFile(capture,'utf8'));}catch{throw new Error('Missing browser evidence; evaluation is not a pass');}
+ let report;try{report=JSON.parse(await fs.readFile(capture,'utf8'));}catch{throw new Error('Missing browser evidence; evaluation is not a pass. '+(error??''));}
  const assertions=report.steps?.filter(s=>s.type==='assert')??[];
  const passed=!error&&report.ok===true&&assertions.length===c.actions.filter(a=>a.type==='assert').length&&assertions.every(s=>s.ok===true);
  const result={schema:1,case:id,htmlSha256:hash(html),passed,assertions:assertions.map(s=>({ok:s.ok,error:s.error??null})),capture,scope:'Observed browser behavior for this fixture only; not a general model intelligence score.'};await writeJSON(path.join(run,'grade.json'),result);return result;
