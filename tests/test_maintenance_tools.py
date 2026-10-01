@@ -42,6 +42,7 @@ class MaintenanceTools(unittest.TestCase):
   git('init','-b','main');git('config','user.name','Synthetic fixture');git('config','user.email','fixture@users.noreply.github.com')
   (repo/'tools').mkdir();(repo/'tests').mkdir();(repo/'.githooks').mkdir()
   shutil.copyfile(ROOT/'tools/gate.py',repo/'tools/gate.py');shutil.copyfile(ROOT/'.githooks/pre-push',repo/'.githooks/pre-push')
+  (repo/'.githooks/pre-push').chmod(0o755)
   # These trivial scripts are test doubles for the gate process protocol only.
   (repo/'tools/check.mjs').write_text('console.log("fixture quality protocol")')
   (repo/'tests/package-smoke.mjs').write_text('console.log("fixture package protocol")')

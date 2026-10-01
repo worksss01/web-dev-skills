@@ -11,3 +11,5 @@ Local validation on 2026-10-01, Windows / Node 24.18.0:
 - Knowledge reviews: official Chrome debugging, Node WebSocket and React hydration sources were fetched and three claims reviewed against exact hashes/quotes. Chrome/Node applicability was checked against observed versions; React remains unknown for an unspecified project. Other sources are not newly certified.
 
 Installer/package, exact-revision CI and final release verification are separate checks; consult the release's CI link. Signatures authenticate publisher bytes, not safety. Docker and filesystem controls do not guarantee protection against kernel flaws or every same-user race. No live Cowork account update is claimed.
+
+The first Linux CI attempt correctly blocked the synthetic hook fixture because hook setup changed its executable bit after the fixture commit. The fixture now records that mode before committing. The gate was not weakened; corrected tests must pass on the final CI revision.
