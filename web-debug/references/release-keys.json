@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "keys": [
+    {
+      "id": "9edfb5ad67184cfd",
+      "pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAqAIwttobsbHZj/MTbKdTGNNWOOEviODvUlfTlReDV7w=\n-----END PUBLIC KEY-----\n"
+    }
+  ],
+  "note": "Initial trust is established when the user installs this package from the publisher. Signatures authenticate bytes, not their safety."
+}

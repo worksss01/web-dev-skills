@@ -1,6 +1,6 @@
 # Upload the Cowork skill
 
-Download `web-debug-cowork-1.6.3.zip` from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). Upload the complete ZIP in Skills → Add → Upload skill. Do not select SKILL.md alone: references and scripts are part of the package.
+Download `web-debug-cowork-1.7.0.zip` from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). Upload the complete ZIP in Skills → Add → Upload skill. Do not select SKILL.md alone: references and scripts are part of the package.
 
 Wait for the platform's upload/security result, then find and enable web-debug-cowork if the account exposes an enable option. Start with:
 

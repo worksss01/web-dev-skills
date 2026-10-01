@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "image": "node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6",
+  "source": "docker.io/library/node:24-bookworm-slim",
+  "reviewedOn": "2026-10-01",
+  "note": "Official Node image resolved during implementation. A digest pins contents; it does not certify the runtime free of vulnerabilities. Refresh deliberately."
+}

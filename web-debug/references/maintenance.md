@@ -59,3 +59,7 @@ The bundle does not install a scheduler or run in the background. Refresh occurs
 ## Failure handling
 
 On network failure, authentication/challenge content, moved documentation or an unknown version, keep the prior evidence and mark the current claim unverified. Check official redirects/release notes or a local installed API definition. If offline, prefer a reproducible feature test and explicitly bound the conclusion to the tested runtime. Do not claim that a successful HTTP request makes the knowledge current.
+
+## Version-bound claims
+
+Use `knowledge record --out CACHE --input REVIEW.json` to record a semantically reviewed claim tied to a source hash and supporting quote. Use `knowledge assess --out CACHE --versions OBSERVED.json` to check freshness and applicability to exact observed versions. Decisions include verified, deprecated, conflict and needs-review. Different applicable claims are potential conflicts, not automatically proven contradictions. Records retain prior review history. Fetching, quote matching and signatures do not replace semantic review.

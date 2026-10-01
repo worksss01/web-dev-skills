@@ -166,7 +166,7 @@ export async function exportReport(directory,id,out,{audience='private',overwrit
   const report=await readRecord(root,id),markdown=renderReport(report,{audience});await writeFile(out,markdown,{overwrite});return {id,audience,output:path.resolve(out),submitted:false,note:'Local export only. Inspect before sharing. Security findings need a private destination.'};
 }
 
-const HELP=`Web Debug Reports — local records, no network or telemetry
+const HELP=`Web Debug Reports — local records and explicit reviewed GitHub submission
   report template --out work/report-input.json
   report create --input work/report-input.json [--store work/web-debug/reports]
   report create --title TEXT --summary TEXT [--origin ORIGIN] [--kind bug|compatibility|security|feedback]
@@ -176,12 +176,14 @@ const HELP=`Web Debug Reports — local records, no network or telemetry
   report triage --id ID --origin ORIGIN --reason TEXT [--status confirmed|needs-info|in-progress|resolved|duplicate|new]
     resolved also needs --fixed-in VERSION --verification TEXT; duplicate needs --duplicate-of ID
   report export --id ID --out work/report.md [--audience private|public] [--overwrite]
+  report send --id ID [--reviewed-sha SHA256] [--outbox DIR]
 Origins: ${ORIGINS.join(', ')}
 All commands accept --store. Reports start unclassified; reporter suspicion is not a confirmed cause.
 Only skill-code/skill-guidance can enter our patch work and be resolved in our release.
 Security reports cannot be exported for a public channel. Nothing is submitted automatically.`;
 export async function main(argv) {
   const command=argv[0]&&!argv[0].startsWith('--')?argv[0]:'help';
+  if(command==='send')return (await import('./delivery.mjs')).main(argv);
   const routes={help:[[],[]],template:[['out'],['overwrite']],create:[['input','title','summary','origin','kind','component'],[]],list:[['queue','status'],[]],show:[['id'],[]],amend:[['id','input','reason'],[]],triage:[['id','origin','reason','status','fixed-in','verification','duplicate-of'],[]],export:[['id','out','audience'],['overwrite']]};
   if(!Object.hasOwn(routes,command))throw new Error('Unknown report command');const [values,flags]=routes[command],o=options(argv,[...values,'store'],flags,command==='help'&&argv[0]?.startsWith('--')?0:1);
   if(command==='help'||o.help){console.log(HELP);return;}

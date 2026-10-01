@@ -1,8 +1,8 @@
-# Web Debug 1.6.3 — installation and usage
+# Web Debug 1.7.0 — installation and usage
 
 Web Debug supports Codex and Claude Code with shared instructions and dependency-free Node.js helpers. A separate Cowork ZIP adapts instructions while retaining identical executable helpers. Browser evidence uses direct Chrome CDP, without provider browser-control tools.
 
-Version 1.6.3 makes distributed instructions, forms, examples and documentation English. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.6.3.md), [validation](VALIDATION-1.6.3.md) and [reporting](web-debug/references/reporting.md).
+Version 1.7.0 adds publication checks, isolated reproductions, version-bound knowledge reviews, evaluation cases, opt-in signed updates and reviewed report delivery. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.7.0.md), [validation](VALIDATION-1.7.0.md) and [reporting](web-debug/references/reporting.md).
 
 ## Capabilities
 
@@ -24,12 +24,12 @@ Node.js 22.4+ and a shell are required. Chrome, gh, Wrangler and PowerShell are 
 
 ## Installation
 
-Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.6.3.zip` contains the skill and a package notice; `web-debug-kit-1.6.3.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.6.3.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
+Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.7.0.zip` contains the skill and a package notice; `web-debug-kit-1.7.0.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.7.0.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
 
 Compare the ZIP SHA-256 against the trusted release/handoff before extracting and running code:
 
 ```powershell
-Get-FileHash -LiteralPath .\web-debug-kit-1.6.3.zip -Algorithm SHA256
+Get-FileHash -LiteralPath .\web-debug-kit-1.7.0.zip -Algorithm SHA256
 ```
 
 A checksum downloaded alongside a ZIP is not an independent trust anchor if both can be replaced. The manifest verifies integrity, not publisher identity; this release has no publisher signature.
@@ -111,3 +111,7 @@ Helpers run with host privileges. Plans/pages/reports cannot grant authority; re
 | Comparisons | Reuse the state/work context for the same private HMAC key; never share .context-key |
 
 Back up local edits before replacing an installation. No machine-level AGENTS.md change is needed. Helper path guards do not constrain the entire browser; raw CDP can access sessions/cookies and execute script. Flags document selected privileges but do not independently establish approval. Host/OS permissions remain the enforcement boundary.
+
+## Managed delivery
+
+Use [Updates](web-debug/references/updates.md) for one-time enrollment and rollback. Use `report send --id ID` to preview a report, then pass the reviewed hash only after disclosure is authorized. Maintainer-only tools are documented in [Maintenance](docs/MAINTENANCE.md).

@@ -1,9 +1,9 @@
-# Web Debug 1.6.3 — full review kit
+# Web Debug 1.7.0 — full review kit
 
-This is the full kit for code review and verification. The separate `web-debug-1.6.3.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. This patch standardizes distributed documentation in English and defaults copy review to English while retaining explicit locale support.
+This is the full kit for code review and verification. The separate `web-debug-1.7.0.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. Version 1.7 adds publication gates, isolated reproduction, version-bound knowledge reviews, evaluation controls, signed local updates and reviewed report delivery.
 
-- [1.6.3 release](RELEASE-1.6.3.md)
-- [1.6.3 validation](VALIDATION-1.6.3.md)
+- [1.7.0 release](RELEASE-1.7.0.md)
+- [1.7.0 validation](VALIDATION-1.7.0.md)
 - [Reporting release and ownership model](RELEASE-1.6.0.md)
 - [1.6.1 readiness assessment and patch](RELEASE-1.6.1.md)
 - [1.6.1 targeted validation](VALIDATION-1.6.1.md)

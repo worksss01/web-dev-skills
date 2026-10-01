@@ -1,12 +1,16 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {execFile} from 'node:child_process';
+import {execFile,spawnSync} from 'node:child_process';
 import {promisify} from 'node:util';
 import {VERSION,options,required,findExecutable,printResult,assertNode} from './common.mjs';
-const routes={chrome:'chrome.mjs',project:'project.mjs',analyze:'analyze.mjs',copy:'copy.mjs',edge:'edge.mjs',github:'github.mjs',knowledge:'refresh.mjs',report:'report.mjs'};
+const routes={chrome:'chrome.mjs',project:'project.mjs',analyze:'analyze.mjs',copy:'copy.mjs',edge:'edge.mjs',github:'github.mjs',knowledge:'refresh.mjs',report:'report.mjs',update:'update.mjs'};
 export async function main(argv) {
   assertNode();const [command,...rest]=argv;
-  if(!command||['help','--help'].includes(command)){console.log(`Web Debug ${VERSION} — one entry point, no npm dependencies\n  debug.mjs chrome check --url URL [--out JSON]\n  debug.mjs chrome launch|status|tabs|new|run|stop [options]\n  debug.mjs project|analyze|copy|edge|github|knowledge [options]\n  debug.mjs report create|template|list|show|amend|triage|export [options]\n  debug.mjs windows --project PATH [--ports 3000,5173] [--out FILE]\nUse COMMAND --help for its options. With --out, stdout is compact; --full retains the complete stdout response. Quick check uses a private pipe and closes Chrome automatically. Chrome state defaults to work/web-debug/chrome under the current project. Reports are local files; nothing is submitted automatically.`);return;}
+  if(command&&!['update','report'].includes(command)&&!['help','--help'].includes(command)&&!rest.includes('--help')&&process.env.WEB_DEBUG_UPDATE_CHECKED!=='1'){
+    try{const result=await (await import('./update.mjs')).autoUpdate();if(result.updated){const child=spawnSync(process.execPath,[fileURLToPath(import.meta.url),...argv],{stdio:'inherit',windowsHide:true,env:{...process.env,WEB_DEBUG_UPDATE_CHECKED:'1'}});if(child.error)throw child.error;process.exitCode=child.status??1;return;}}
+    catch{console.error('Web Debug update deferred; current files remain in use. Run update status/check for details.');}
+  }
+  if(!command||['help','--help'].includes(command)){console.log(`Web Debug ${VERSION} — one entry point, no npm dependencies\n  debug.mjs chrome check --url URL [--out JSON]\n  debug.mjs chrome launch|status|tabs|new|run|stop [options]\n  debug.mjs project|analyze|copy|edge|github|knowledge|update [options]\n  debug.mjs report create|template|list|show|amend|triage|export|send [options]\n  debug.mjs windows --project PATH [--ports 3000,5173] [--out FILE]\nUse COMMAND --help for its options. With --out, stdout is compact; --full retains the complete stdout response. Quick check uses a private pipe and closes Chrome automatically. Chrome state defaults to work/web-debug/chrome under the current project. Reports are local files; nothing is submitted automatically.`);return;}
   if(!rest.length)rest.push('--help');
   const forwarded=rest.includes('--full')||rest.includes('--compact')?rest:[...rest,'--compact'];
   if(command==='windows') {

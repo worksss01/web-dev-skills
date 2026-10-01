@@ -52,7 +52,7 @@ export async function fetchSource(source) {
   const signal=AbortSignal.timeout(20000);
   for(let redirect=0;redirect<=5;redirect++) {
     sourceURL(url,source.allowedHosts);
-    const response=await fetch(url,{redirect:'manual',signal,headers:{'User-Agent':`web-debug-knowledge-review/${VERSION}`,'Accept':'text/html,text/plain,application/json'}});
+    const response=await fetch(url,{redirect:'manual',signal,headers:{'User-Agent':`web-debug-knowledge-review/${VERSION}`,'Accept':'text/html,text/plain,application/json','Accept-Language':'en'}});
     if([301,302,303,307,308].includes(response.status)) {
       const location=response.headers.get('location');
       await response.body?.cancel();
@@ -80,6 +80,7 @@ export function classify(previous, downloaded, now) {
 }
 export async function main(argv) {
   const command=args(argv)._[0]||'fetch';
+  if(['record','assess'].includes(command))return (await import('./knowledge-review.mjs')).main(argv);
   const routes={fetch:['out','ids'],status:['out'],migrate:['out'],review:['out','id','sha256','note-file'],help:[]};
   if(!Object.hasOwn(routes,command))throw new Error(`Unknown command: ${command}`);
   const options=parseOptions(argv,routes[command],[],1);

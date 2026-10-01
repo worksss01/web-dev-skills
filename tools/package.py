@@ -9,12 +9,13 @@ import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parent.parent
-PAYLOAD_DIRS=('web-debug','tests','audit','examples','reports','validation','tools','adapters')
+PAYLOAD_DIRS=('web-debug','tests','audit','examples','reports','validation','tools','adapters','evals','policy','.githooks')
 def digest(data):return hashlib.sha256(data).hexdigest()
 
 def read_tree(folder):
     result={}
     for file in folder.rglob('*'):
+        if '__pycache__' in file.relative_to(folder).parts:continue
         if file.is_symlink() or getattr(file,'is_junction',lambda:False)():raise ValueError(f'Linked source refused: {file}')
         if not file.resolve().is_relative_to(ROOT):raise ValueError(f'Source leaves repository: {file}')
         if file.is_file():
@@ -29,7 +30,7 @@ def collect_payload():
     for directory in PAYLOAD_DIRS:
         for relative,data in read_tree(ROOT/directory).items():result[directory+'/'+relative]=data
     for file in [ROOT/'install.mjs',ROOT/'LICENSE',*(p for p in ROOT.glob('*.md') if p.name!='AGENTS.md')]:result[file.name]=file.read_bytes()
-    for relative in ('docs/UPDATES.md','docs/cowork/UPLOAD.md','docs/cowork/package-validation.json','docs/cowork/local-smoke-validation.json'):
+    for relative in ('docs/UPDATES.md','docs/MAINTENANCE.md','docs/cowork/UPLOAD.md','docs/cowork/package-validation.json','docs/cowork/local-smoke-validation.json'):
         result[relative]=(ROOT/relative).read_bytes()
     return result
 

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Fail closed if Python or a content-bound review receipt is unavailable.
+exec python tools/gate.py pre-push

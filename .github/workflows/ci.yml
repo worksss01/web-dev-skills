@@ -1,7 +1,7 @@
 name: Validate skill and packages
 on:
   push:
-    branches: [main]
+    branches: [main, 'feature/**', 'maintenance/**']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -29,3 +29,12 @@ jobs:
         run: node tests/package-smoke.mjs --work work/ci-package
       - name: Build all variants
         run: python tools/package.py --out work/ci-build
+      - name: Browser evaluation controls
+        if: matrix.node == '24'
+        run: node tools/evaluate.mjs self-test --out work/ci-evals
+      - name: Pull pinned isolated lab runtime
+        if: matrix.os == 'ubuntu-latest' && matrix.node == '24'
+        run: docker pull node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+      - name: Isolated lab canary
+        if: matrix.os == 'ubuntu-latest' && matrix.node == '24'
+        run: python tools/lab-smoke.py --out work/ci-lab.json
