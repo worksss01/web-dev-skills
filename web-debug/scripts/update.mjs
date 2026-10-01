@@ -137,9 +137,13 @@ export async function autoUpdate(root=SELF){
  try{m=await marker(root);m.lastCheckedAt=new Date().toISOString();await writeJSON(path.join(root,MARKER),m);}finally{await unlock();}
  const p=await latest();return applyUpdate(root,p);
 }
+export async function setAuto(root,enabled){
+ const original=await marker(root),unlock=await acquireLock(path.join(original.stateDir,'operation.lock'));
+ try{const m=await marker(root);if(enabled&&!same(await inventory(root),m.baseline))throw new Error('Local edits preserved; auto cannot be enabled');m.auto=enabled;await writeJSON(path.join(root,MARKER),m);return {auto:enabled};}finally{await unlock();}
+}
 export async function main(argv){
  const command=argv[0]??'help',o=options(argv,['install','bundle','state'],['auto','allow-minor'],1),root=path.resolve(o.install??SELF);
- if(o.help||command==='help'){console.log('update status|check|auto|apply|rollback|disable [--install DIR]\nupdate enroll --bundle SIGNED.json --state DEDICATED_DIR [--auto] [--allow-minor]\nupdate apply --bundle SIGNED.json\nNo enrollment means no background checks. Auto runs at CLI startup, at most daily; it is not a resident service.');return;}
+ if(o.help||command==='help'){console.log('update status|check|auto|apply|rollback|enable|disable [--install DIR]\nupdate enroll --bundle SIGNED.json --state DEDICATED_DIR [--auto] [--allow-minor]\nupdate apply --bundle SIGNED.json\nNo enrollment means no background checks. Auto runs at CLI startup, at most daily; it is not a resident service.');return;}
  let result;
  if(command==='enroll')result=await enroll(root,await bundle(required(o,'bundle')),required(o,'state'),{auto:o.auto===true,allowMinor:o['allow-minor']===true});
  else if(command==='apply')result=await applyUpdate(root,o.bundle?await bundle(o.bundle):await latest());
@@ -147,7 +151,7 @@ export async function main(argv){
  else if(command==='auto')result=await autoUpdate(root);
  else if(command==='check'){const p=await latest();result={available:p.version,signatureVerified:true};}
  else if(command==='status'){try{const m=await marker(root);result={enrolled:true,version:m.version,auto:m.auto,localEdits:!same(await inventory(root),m.baseline)};}catch(e){if(e.code!=='ENOENT')throw e;result={enrolled:false};}}
- else if(command==='disable'){const m=await marker(root);m.auto=false;await writeJSON(path.join(root,MARKER),m);result={auto:false};}
+ else if(['enable','disable'].includes(command))result=await setAuto(root,command==='enable');
  else throw new Error('Unknown update command');
  console.log(JSON.stringify(result,null,2));
 }

@@ -21,9 +21,12 @@ node SKILL_DIR/scripts/debug.mjs update status
 node SKILL_DIR/scripts/debug.mjs update check
 node SKILL_DIR/scripts/debug.mjs update apply --bundle SIGNED_RELEASE.json
 node SKILL_DIR/scripts/debug.mjs update rollback
+node SKILL_DIR/scripts/debug.mjs update enable
 node SKILL_DIR/scripts/debug.mjs update disable
 ```
 
 Checks download only public GitHub release metadata/payloads, without account tokens. Validate signatures, versions, path restrictions, sizes and file inventories before replacement. Back up the exact previous installation and use staged directory replacement. Stop on changed user files, untrusted keys, corrupt backups, downgrades or incompatible versions. Rollback disables auto to avoid reapplying the same update immediately.
 
 An updated helper restarts its own command to avoid mixing module versions. The host AI session may retain old instructions until reloaded; replacing files does not rewrite conversation context. Offline/download failures retain the installed version. Concurrent same-user filesystem attacks and a compromised publisher key require stronger host controls; these checks are not an OS sandbox.
+
+After rollback, re-enable auto only when a reviewed replacement is available; enabling it while the same defective release is latest can apply that release again. Enable/disable changes are locked and enabling refuses local edits.

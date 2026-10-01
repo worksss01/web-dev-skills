@@ -13,3 +13,5 @@ Local validation on 2026-10-01, Windows / Node 24.18.0:
 Installer/package, exact-revision CI and final release verification are separate checks; consult the release's CI link. Signatures authenticate publisher bytes, not safety. Docker and filesystem controls do not guarantee protection against kernel flaws or every same-user race. No live Cowork account update is claimed.
 
 The first Linux CI attempt correctly blocked the synthetic hook fixture because hook setup changed its executable bit after the fixture commit. The fixture now records that mode before committing. The gate was not weakened; corrected tests must pass on the final CI revision.
+
+A GitHub-hosted Windows browser attempt produced no capture and failed closed. Bounded, redacted startup diagnostics are now retained. A subsequent exact-revision run passed the browser controls on both hosted operating systems; this does not establish the root cause of the earlier environment-sensitive startup failure or guarantee every cold start.

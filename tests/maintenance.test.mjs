@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import path from 'node:path';
 import {generateKeyPairSync,sign,createHash,randomUUID} from 'node:crypto';
-import {verifyEnvelope,enroll,applyUpdate,rollback,inventory,canUpgrade,publicJSON,MARKER} from '../web-debug/scripts/update.mjs';
+import {verifyEnvelope,enroll,applyUpdate,rollback,inventory,canUpgrade,publicJSON,setAuto,MARKER} from '../web-debug/scripts/update.mjs';
 import {createReport} from '../web-debug/scripts/report.mjs';
 import {prepare,sendPrepared,github} from '../web-debug/scripts/delivery.mjs';
 import {recordClaim,assessKnowledge,versionMatches} from '../web-debug/scripts/knowledge-review.mjs';
@@ -22,7 +22,7 @@ test('enrollment, update and rollback preserve verified content and disable auto
  await enroll(root,p,path.join(dir,'state'),{auto:true});
  const next=verifyEnvelope(signed('1.7.1',{'references/new.md':'New reference'}),trust);
  const result=await applyUpdate(root,next);assert.equal(result.to,'1.7.1');assert((await inventory(root))['references/new.md']);
- const back=await rollback(root);assert.equal(back.version,'1.7.0');assert.equal(back.auto,false);assert.equal((await inventory(root))['references/new.md'],undefined);
+ const back=await rollback(root);assert.equal(back.version,'1.7.0');assert.equal(back.auto,false);assert.equal((await inventory(root))['references/new.md'],undefined);assert.equal((await setAuto(root,true)).auto,true);
 });
 test('updater refuses user edits, downgrade, linked content and modified backups',async()=>{
  const dir=await fixture(),root=path.join(dir,'skill'),p=verifyEnvelope(signed(),trust);await installed(root,p);await enroll(root,p,path.join(dir,'state'));
