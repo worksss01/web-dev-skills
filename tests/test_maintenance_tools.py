@@ -8,7 +8,7 @@ class MaintenanceTools(unittest.TestCase):
  def setUp(self):
   base=ROOT/'work/python-maintenance-tests';base.mkdir(parents=True,exist_ok=True);self.dir=Path(tempfile.mkdtemp(dir=base))
  def test_publication_inventory_and_secret_detection(self):
-  for name in ['work/report.json','AGENTS.md','.env','docs/migration-local.json','other-project/code.js','../escape']:
+  for name in ['work/report.json','AGENTS.md','.env','web-debug/.web-debug-update.json','docs/migration-local.json','other-project/code.js','../escape']:
    self.assertFalse(gate.safe_name(name),name)
   secret=('gh'+'p_'+'A'*36).encode();self.assertTrue(gate.scan('tools/example.mjs',secret))
   self.assertNotIn(secret.decode(),json.dumps(gate.scan('tools/example.mjs',secret)))

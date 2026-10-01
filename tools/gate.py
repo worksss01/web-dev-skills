@@ -5,7 +5,7 @@ import argparse, base64, hashlib, json, os, re, subprocess, sys, zipfile
 ROOT=Path(__file__).resolve().parent.parent
 ROOTS={'web-debug','tests','tools','evals','policy','adapters','docs','audit','validation','reports','examples','.github','.githooks'}
 FILES={'.gitignore','.gitattributes','LICENSE','MANIFEST.sha256','install.mjs'}
-DENIED={'work','outputs','.git','node_modules','__pycache__','AGENTS.md','session.json','.context-key','Cookies','Login Data'}
+DENIED={'work','outputs','.git','node_modules','__pycache__','AGENTS.md','session.json','.context-key','.web-debug-update.json','Cookies','Login Data'}
 PATTERNS={
  'github-token':r'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{50,})',
  'provider-key':r'\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{35,}',

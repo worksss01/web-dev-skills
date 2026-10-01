@@ -21,7 +21,7 @@ def read_tree(folder):
         if file.is_file():
             relative=file.relative_to(folder).as_posix()
             if any(p in {'work','outputs','.git','node_modules','__pycache__'} or p.startswith('profile-') for p in file.relative_to(folder).parts):raise ValueError(f'Runtime content in release source: {file}')
-            if file.name in {'.context-key','session.json','operation.lock'} or file.name.startswith('.env'):raise ValueError(f'Private state in release source: {file}')
+            if file.name in {'.context-key','session.json','operation.lock','.web-debug-update.json'} or file.name.startswith('.env'):raise ValueError(f'Private state in release source: {file}')
             result[relative]=file.read_bytes()
     return result
 
