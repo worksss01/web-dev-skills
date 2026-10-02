@@ -5,7 +5,11 @@ description: Design distinctive websites from short briefs, develop and debug th
 
 # Web Debug
 
-For website creation or redesign, use [Design](references/website-design.md) to infer a brief, choose a visual direction and refine the rendered work. For bugs, work from a reproducible symptom to evidence, a focused fix and a replay. Preserve the project's stack, facts and existing user work; retain its design system unless redesign is requested. Respond in the user's language. Scale the workflow to the task.
+For website creation or redesign, use [Design](references/website-design.md) to infer a brief, choose a visual direction and refine the rendered work. For bugs, work from a reproducible symptom to evidence, a focused fix and a replay. Preserve the project's stack, facts, brand constraints and existing user work; focused bug fixes retain the existing interface unless redesign is requested. Respond in the user's language. Scale the workflow to the task.
+
+**Modern design is the default requirement for website creation and design/redesign.** Do not deliver classic, retro or legacy-looking UI unless the user explicitly requests that appearance. An unspecified style, existing repository or library default is not permission to choose it. Apply this to the whole in-scope experience, including expanded dropdowns, menus, pickers and dialogs. Follow the [modern design contract](references/website-design.md#modern-design-contract); do not silently redesign unrelated interfaces during a focused bug fix.
+
+**Single-choice controls are not complete until both the trigger and expanded options match the site's visual system and have been visually checked.** A stock browser/OS option popup with only a styled trigger fails the default modern-design requirement. Apply the [selection surface contract](references/ui-design.md#selects-and-option-surfaces) before delivery. Only an explicit user appearance request permits a legacy/native-looking result; compatibility or verification limits must be reported as unresolved instead of silently shipping that fallback as complete.
 
 ## Start
 

@@ -17,6 +17,8 @@ Use these tasks to evaluate the design workflow. They are human/agent review cas
 | planner-continuity | Build a distinctive studio planner that works across desktop and mobile. | Synthetic events, including overlaps. Selected date, event detail and filters must remain consistent when the layout changes. No live calendar. |
 | product-control-story | Improve the existing fictional speaker concept so the following section explains a meaningful control interaction. | Reuse the supplied permitted asset and brand. Local visual feedback only; no invented audio performance or real purchase. |
 | option-surface | Refine the supplied planner's day and work-type selectors so their expanded options belong to the same visual system. | Preserve the local form data and calendar behavior. Inspect open options inside the dialog, including narrow screens, keyboard commit/cancel and long labels. |
+| catalog-default-controls | Create a Thai-language catalog for a fictional digital-goods store with search, category filters and sorting. | Supply synthetic products/prices, with no style or dropdown-specific prompt. The candidate must apply the modern default and selection requirement through the skill. No live commerce or external submissions. |
+| classic-explicit | Create a deliberately classic, early-web-style directory for a fictional film club. | The legacy visual direction is explicitly requested. Preserve usable navigation and accessibility; the skill must not replace this request with its modern default. |
 
 ## Review procedure
 
@@ -31,6 +33,8 @@ For planner continuity, exercise an overlap, a category filter, a selected date/
 ## Separate verdicts
 
 Functional gates: task completion, correct local-versus-live behavior, truthful/demo content, responsive readability, relevant keyboard/focus states, preserved security/privacy/index intent, honest evidence and capability limits. Unverified gates remain unverified; do not average a failure away.
+
+For catalog-default-controls, the unqualified brief still requires a contemporary full-page result. A classic/legacy interpretation without a user style request, or an untouched stock option popup, fails design completion even if the closed trigger looks branded. Open the sort choices at wide/narrow sizes and verify resulting product order and keyboard commit/cancel. Keep context controls: classic-explicit and an explicit native-appearance brief must be respected; a focused data/sorting bug fix must not trigger an unrelated redesign; a platform/verification limitation must remain unresolved rather than permitting an old-looking fallback to pass. These are evaluation cases, not claims of completed independent agent runs.
 
 Visual criteria: task fit; identifiable visual idea; text/media relationship; intentional typography and assets; coherent details; section/state rhythm; narrow-screen recomposition; purposeful motion when applicable. Use weak/adequate/strong/not-assessed with concrete observations. There is no required color, font, library, effect count or screenshot similarity score.
 

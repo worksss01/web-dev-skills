@@ -4,9 +4,19 @@ Use for new websites, substantial page creation and requested redesign. For a fo
 
 For a complete page, connected flow or substantial interactive surface, read [Design craft](design-craft.md) when composing and reviewing the result. It covers continuity beyond the opening, task-specific density, control states and narrow-screen representation; small fixes do not need that extra workflow.
 
+## Modern design contract
+
+Website creation and design/redesign must produce a contemporary result by default, even when the user supplies only a short brief or says nothing about style. Do not choose or deliver classic, retro, dated or legacy-looking UI unless the user explicitly requests that appearance, including by clearly selecting such a reference. An existing repository, old dependency, convenient native popup or assumed audience preference is not an explicit style request.
+
+Apply the requirement to the whole authorized design: page composition, type/assets, content hierarchy, responsive layouts and the open/active/error states of controls. A modern hero with unconsidered legacy dropdowns or dialogs is incomplete. Modernity is judged from the rendered experience and task fit, not a library's release date or the number of effects. Do not replace judgment with blanket bans on serif type, restrained layouts or established HTML semantics.
+
+Preserve verified facts, stack, brand assets and user work while expressing the in-scope design through a contemporary visual system. A focused bug fix does not authorize redesigning an unrelated existing site. If explicit user constraints conflict, identify the concrete conflict and resolve it before claiming the design is complete; do not infer permission for classic UI from existing files alone.
+
+The [selection surface contract](ui-design.md#selects-and-option-surfaces) is mandatory within that design scope. Verify the actual expanded result and the selected value's effect. If a platform/accessibility constraint prevents a suitable contemporary solution, report the unresolved requirement and propose a compatible contemporary alternative. Do not quietly deliver an old-looking fallback as a finished design. Missing browser/image access remains a verification gap, not a pass.
+
 ## Infer the brief and choose a direction
 
-Read the request, existing pages/components, brand constraints and permitted assets. Identify the audience, main action, content hierarchy, language and necessary states. Reuse the project's design system unless redesign is requested. Infer reversible visual choices rather than sending a font/color/spacing questionnaire. Ask when an unknown materially changes the product or its factual content, while progressing independent work.
+Read the request, existing pages/components, brand constraints and permitted assets. Identify the audience, main action, content hierarchy, language and necessary states. Reuse compatible parts of the project's design system while applying the modern default to in-scope creation/redesign; an explicit user style choice takes precedence. Infer reversible visual choices rather than sending a font/color/spacing questionnaire. Ask when an unknown materially changes the product or its factual content, while progressing independent work.
 
 Choose the page's job before the visual language. Marketing, commerce, reading, booking and operational work need different structures; one site may contain several. Consult only relevant entries in [patterns and visual references](design-patterns.md). Treat style names as search vocabulary, not a complete specification.
 

@@ -1,6 +1,6 @@
 # Design craft across a page or flow
 
-Use with [website design](website-design.md) for substantial creation/redesign. Reuse the chosen brand, stack, facts and scope. Consult only relevant [reference mechanisms](design-patterns.md#beyond-the-opening) rather than loading a gallery. The goal is a resolved product-specific result; more effects, files or dependencies are not success criteria.
+Use with [website design](website-design.md) for substantial creation/redesign. Reuse the chosen brand, stack, facts and scope while applying its modern-by-default contract. Classic/retro/legacy appearance requires the user's explicit style choice. Consult only relevant [reference mechanisms](design-patterns.md#beyond-the-opening) rather than loading a gallery. The goal is a resolved product-specific result; more effects, files or dependencies are not success criteria.
 
 ## Establish a sequence and relationships
 
@@ -18,7 +18,7 @@ State the decision supported by a dashboard, queue or comparison. Allocate space
 
 For relevant controls, inspect resting, hover/focus, pressed/dragging, selected and settled states. Coordinate the control and feedback: trigger/popup alignment, track/value relationship, progress/content change, and selection/detail context. Use native or established accessible behavior where appropriate; visual treatment can sit around it.
 
-Include the expanded option surface in that inspection. A carefully styled closed select can still open an unrelated browser/OS picker. Resolve the actual open appearance and selection behavior using the [select and popup checks](ui-design.md#selects-and-option-surfaces).
+Apply the [selection surface contract](ui-design.md#selects-and-option-surfaces) as a completion requirement. A carefully styled closed select can still open an unrelated browser/OS picker; that fails the default modern-design requirement. Inspect the actual expanded surface and the task outcome after selection.
 
 For meaningful motion, identify the trigger, the element retaining identity, the change in understanding/control and the settled result. Review intermediate, reverse and interrupted states. A menu opened and immediately closed should settle correctly; a slider should retain its value after release; a dialog should close and restore useful focus. Do not count an action as verified merely because a click command succeeded.
 

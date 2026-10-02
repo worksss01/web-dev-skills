@@ -1,8 +1,8 @@
-# Web Debug 1.8.2 — installation and usage
+# Web Debug 1.8.3 — installation and usage
 
 Web Debug supports Codex and Claude Code with shared instructions and dependency-free Node.js helpers. A separate Cowork ZIP adapts instructions while retaining identical executable helpers. Browser evidence uses direct Chrome CDP, without provider browser-control tools.
 
-Version 1.8.2 adds explicit review of expanded select/combobox surfaces and their visual, keyboard and form-value behavior. It retains the short-brief workflow, page/flow continuity and responsive context checks. Relevant craft guidance loads only for substantial design work. Existing publication checks, isolated reproductions, knowledge review, signed updates and report delivery remain available. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.8.2.md), [validation](VALIDATION-1.8.2.md) and [reporting](web-debug/references/reporting.md).
+Version 1.8.3 makes contemporary design the default for website creation and design/redesign. Classic, retro or legacy appearance requires an explicit user style request. This completion requirement is visible in both host entry points and covers the whole in-scope page and interactive states; styling only a closed dropdown is insufficient. It retains the short-brief workflow, page/flow continuity and responsive context checks. Relevant craft guidance loads only for substantial design work. Existing publication checks, isolated reproductions, knowledge review, signed updates and report delivery remain available. Reporting preserves ownership distinctions and local-first storage; an AI may send a reviewed report when the user asks. See [release notes](RELEASE-1.8.3.md), [validation](VALIDATION-1.8.3.md) and [reporting](web-debug/references/reporting.md).
 
 ## Capabilities
 
@@ -24,12 +24,12 @@ Node.js 22.4+ and a shell are required for helpers. Chrome, gh, Wrangler and Pow
 
 ## Installation
 
-Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.8.2.zip` contains the skill and a package notice; `web-debug-kit-1.8.2.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.8.2.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
+Download from [Releases](https://github.com/worksss01/web-dev-skills/releases/latest). The lean `web-debug-1.8.3.zip` contains the skill and a package notice; `web-debug-kit-1.8.3.zip` additionally includes the installer, tests and evidence. Skill files match. Use the full kit for review. Cowork uses `web-debug-cowork-1.8.3.zip`; see [upload instructions](docs/cowork/UPLOAD.md).
 
 Compare the ZIP SHA-256 against the trusted release/handoff before extracting and running code:
 
 ```powershell
-Get-FileHash -LiteralPath .\web-debug-kit-1.8.2.zip -Algorithm SHA256
+Get-FileHash -LiteralPath .\web-debug-kit-1.8.3.zip -Algorithm SHA256
 ```
 
 A checksum downloaded alongside a ZIP is not an independent trust anchor if both can be replaced. The manifest verifies integrity, not publisher identity. The separate signed core update payload has its own trust and enrollment requirements; see [managed updates](docs/UPDATES.md).
