@@ -2,13 +2,15 @@
 
 Use for new websites, substantial page creation and requested redesign. For a focused visual defect, use [UI diagnosis](ui-design.md) and retain the existing system. A lightweight skill can still produce visually ambitious work; do not confuse low instruction/tool overhead with a requirement for a plain website.
 
+For a complete page, connected flow or substantial interactive surface, read [Design craft](design-craft.md) when composing and reviewing the result. It covers continuity beyond the opening, task-specific density, control states and narrow-screen representation; small fixes do not need that extra workflow.
+
 ## Infer the brief and choose a direction
 
 Read the request, existing pages/components, brand constraints and permitted assets. Identify the audience, main action, content hierarchy, language and necessary states. Reuse the project's design system unless redesign is requested. Infer reversible visual choices rather than sending a font/color/spacing questionnaire. Ask when an unknown materially changes the product or its factual content, while progressing independent work.
 
 Choose the page's job before the visual language. Marketing, commerce, reading, booking and operational work need different structures; one site may contain several. Consult only relevant entries in [patterns and visual references](design-patterns.md). Treat style names as search vocabulary, not a complete specification.
 
-For substantial design work, inspect a small set of relevant rendered references when available, starting with any the user supplied. Record the useful mechanism: composition, type, imagery, depth or interaction. Inspect the actual page and relevant scroll/state changes; a thumbnail or promotional description is insufficient evidence of the whole design. If reference access is unavailable, disclose that and choose a coherent original direction from available evidence.
+For substantial design work, inspect a small set of relevant rendered references when available, starting with any the user supplied. Record the useful mechanism and relationships: composition, type, imagery, depth or interaction. Inspect the actual page and relevant scroll/state changes; a thumbnail or promotional description is insufficient evidence of the whole design. Wait for the relevant content or state, not just document readiness: an empty loading/search view is not evidence of no results. If reference access is unavailable, disclose that and choose a coherent original direction from available evidence.
 
 Consider alternatives when the direction is uncertain and choose one. Alternatives should differ in composition or experience, not just palette. This need not create extra artifacts, agent sessions or paid calls. Briefly explain the chosen direction and its fit. Do not require the user to art-direct every component.
 

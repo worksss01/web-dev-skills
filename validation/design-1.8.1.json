@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "skillVersion": "1.8.1",
+  "date": "2026-10-02",
+  "attemptType": "author-walkthrough",
+  "independentAgentEvaluation": false,
+  "ownerVisualAcceptance": "not-assessed-for-these-outputs",
+  "runtime": {
+    "os": "Windows",
+    "node": "24.18.0",
+    "browser": "Chrome/154.0.8037.59"
+  },
+  "cases": [
+    "planner-continuity",
+    "product-control-story"
+  ],
+  "viewportsCssPx": [
+    1440,
+    1024,
+    390
+  ],
+  "assertionsPassed": 28,
+  "assertionsFailed": 0,
+  "screenshotsCaptured": 10,
+  "representativeFinalSourceScreenshotsViewed": 10,
+  "profilePurged": true,
+  "externalServicesCalledByDemo": false,
+  "artifactsDistributedInSkill": false,
+  "plannerHtmlSha256": "bc0d83b8c36f03b4665480bdc4b49d65bf0d4af8f533fe47916a0a166abd6fca",
+  "productHtmlSha256": "6e1e65ab6fa3b9c5a1025f459dd88a92eb7187ffb3c1d7fef68159f43b2bba70",
+  "observedRefinements": [
+    "single desktop timeline scroll",
+    "stronger small text",
+    "mobile day navigation preserves shared state",
+    "product-specific control feedback"
+  ],
+  "initialHarnessLimitations": [
+    "Responsive assertion ran before the media-query change settled; explicit readiness was added.",
+    "The category filter expectation was corrected to eight remaining records."
+  ],
+  "unassessed": [
+    "independent-model-comparison",
+    "other-design-briefs",
+    "live-cowork",
+    "cross-browser",
+    "real-mobile-hardware",
+    "assistive-technology",
+    "field-performance"
+  ],
+  "note": "Functional evidence and author visual observations are separate; no automatic aesthetic superiority or full accessibility compliance is established."
+}

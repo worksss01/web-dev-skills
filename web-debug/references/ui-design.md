@@ -11,6 +11,8 @@ For a visual or interaction problem, write down the intended user action and obs
 
 Use screenshots to check alignment, spacing, hierarchy, contrast, clipping, overlap, font loading and content density. An overflow metric is only a candidate finding: intentionally offscreen drawers, transforms and hidden elements can be legitimate. Confirm what is actually visible before editing code.
 
+For animated or stateful controls, include relevant intermediate, reversed and interrupted states. Check the actual outcome after input: a successful click command does not establish that a view changed, Escape closed a panel or a dragged value persisted. Wait for a meaningful loaded/state condition before capturing; a loading shell can resemble an empty result.
+
 ## Semantics and interaction
 
 Use buttons for actions and links for navigation. Ensure accessible names match intent, labels are associated with inputs, errors are discoverable and the focus order follows the interaction. Check tab/shift-tab, activation, Escape behavior and focus restoration for dialogs/menus. Native controls can reduce custom state and keyboard code; confirm their behavior against the design and supported browsers.
@@ -24,6 +26,8 @@ WCAG 2.2 is a useful named reference; do not declare compliance merely because a
 Inspect containing blocks, min/max constraints, grid/flex item sizes, intrinsic dimensions, sticky ancestors, overflow and stacking contexts. Let content drive minimum sizes. Prefer fixes at the component that introduces the constraint over global clipping. Include long labels and dynamic data when verifying; a short placeholder may hide the original defect.
 
 Responsive behavior includes navigation, touch target usability, readable line length and information priority, not just shrinking a desktop layout. Confirm that a visually hidden panel does not leave interactive descendants in the keyboard path. Use reduced motion where animation is nonessential; avoid automatically removing useful state feedback.
+
+If the representation changes across widths, verify that selected context and data meaning survive: for example, the same selected date/event when a week grid becomes a day timeline. A separate mobile markup tree must not silently diverge from the data or expose duplicate focusable controls.
 
 ## Finish criteria
 

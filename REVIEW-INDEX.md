@@ -1,7 +1,9 @@
-# Web Debug 1.8.0 — full review kit
+# Web Debug 1.8.1 — full review kit
 
-This is the full kit for code review and verification. The separate `web-debug-1.8.0.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. Version 1.8 adds short-brief design guidance and dated visual references while preserving the diagnostic and maintenance workflows.
+This is the full kit for code review and verification. The separate `web-debug-1.8.1.zip` contains only the installable skill plus a package notice. Both contain identical files under `web-debug/`. Version 1.8 adds short-brief design guidance and dated visual references while preserving the diagnostic and maintenance workflows.
 
+- [1.8.1 release](RELEASE-1.8.1.md)
+- [1.8.1 validation](VALIDATION-1.8.1.md)
 - [1.8.0 release](RELEASE-1.8.0.md)
 - [1.8.0 validation](VALIDATION-1.8.0.md)
 - [Design evaluation cases](evals/design-briefs.md)
