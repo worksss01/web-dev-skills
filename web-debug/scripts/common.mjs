@@ -3,7 +3,7 @@ import {constants} from 'node:fs';
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-export const VERSION='1.8.1';
+export const VERSION='1.8.2';
 
 export function args(argv) {
   const result = Object.assign(Object.create(null),{_:[]});

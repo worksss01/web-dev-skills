@@ -18,6 +18,8 @@ State the decision supported by a dashboard, queue or comparison. Allocate space
 
 For relevant controls, inspect resting, hover/focus, pressed/dragging, selected and settled states. Coordinate the control and feedback: trigger/popup alignment, track/value relationship, progress/content change, and selection/detail context. Use native or established accessible behavior where appropriate; visual treatment can sit around it.
 
+Include the expanded option surface in that inspection. A carefully styled closed select can still open an unrelated browser/OS picker. Resolve the actual open appearance and selection behavior using the [select and popup checks](ui-design.md#selects-and-option-surfaces).
+
 For meaningful motion, identify the trigger, the element retaining identity, the change in understanding/control and the settled result. Review intermediate, reverse and interrupted states. A menu opened and immediately closed should settle correctly; a slider should retain its value after release; a dialog should close and restore useful focus. Do not count an action as verified merely because a click command succeeded.
 
 Keep content readable and tasks reachable throughout the flow. Avoid long empty scroll distances, fixed objects covering essential text, or content available only after animation. Maintain a complete reduced-motion/static route. CSS, SVG, canvas and WebGL are implementation choices, not quality levels; choose for the mechanism, browser targets and actual performance needs.

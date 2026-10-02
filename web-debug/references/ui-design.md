@@ -17,6 +17,14 @@ For animated or stateful controls, include relevant intermediate, reversed and i
 
 Use buttons for actions and links for navigation. Ensure accessible names match intent, labels are associated with inputs, errors are discoverable and the focus order follows the interaction. Check tab/shift-tab, activation, Escape behavior and focus restoration for dialogs/menus. Native controls can reduce custom state and keyboard code; confirm their behavior against the design and supported browsers.
 
+### Selects and option surfaces
+
+Open each relevant select, combobox, date picker or menu during visual review. Styling the closed trigger does not establish the appearance of its options: browser/OS pickers may remain unchanged. For a polished branded interface, resolve the popup's typography, spacing, surface, active/selected states and alignment with the trigger. Capture both closed and expanded states, including a narrow viewport and a constrained edge or scrolling dialog.
+
+Reuse a suitable component already in the project. Native controls remain appropriate when their actual open appearance and behavior fit the brief; customizable native select features require target-browser checks. If a custom single-choice surface is needed, retain one authoritative form value and a tested keyboard/focus contract: open, navigate, type-ahead, commit, cancel, move on and restore context. Keep the active option visible, dismiss the innermost popup before its dialog, and avoid duplicate focusable native/custom controls. Verify that a choice reaches the submitted data, not only the trigger label. Inspect long options, pointer/touch behavior and resize/scroll positioning. [MDN select](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select), [W3C select-only combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/).
+
+An ARIA pattern or attractive popup alone does not establish assistive-technology compatibility; test the intended combinations and state any gaps.
+
 The accessibility tree helps inspect roles/names/states but is not a complete audit. Verify visible focus, keyboard reachability, meaningful status feedback, text alternatives and contrast with appropriate tools/manual checks. Automated findings need interpretation. Use the project's existing axe integration when available instead of injecting an unpinned third-party script into a live page.
 
 WCAG 2.2 is a useful named reference; do not declare compliance merely because a screenshot or automated scan passes. Verify the requested conformance level and the relevant success criteria at the [W3C quick reference](https://www.w3.org/WAI/WCAG22/quickref/). Do not invent measurements from appearance alone.

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "skillVersion": "1.8.2",
+  "date": "2026-10-02",
+  "attemptType": "author-walkthrough",
+  "case": "option-surface",
+  "independentAgentEvaluation": false,
+  "ownerVisualAcceptance": "not-assessed-for-revised-output",
+  "runtime": {
+    "os": "Windows",
+    "node": "24.18.0",
+    "browser": "Chrome/154.0.8037.59"
+  },
+  "viewportsCssPx": [
+    [
+      1440,
+      1000
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      568
+    ]
+  ],
+  "assertionsPassed": 28,
+  "assertionsFailed": 0,
+  "captures": 10,
+  "representativeCapturesViewed": 10,
+  "plannerHtmlSha256": "e6c7652647cc3889b448f59a7ce5c7c67654afd0dbcc0b7a9344af6daf1c65ae",
+  "profilePurged": true,
+  "inputChecks": [
+    "pointer",
+    "keyboard",
+    "CDP-emulated-touch"
+  ],
+  "accessibilityTreeObserved": true,
+  "screenReaderTested": false,
+  "artifactsDistributedInSkill": false,
+  "visualCorrections": [
+    "themed expanded options",
+    "remove unnecessary popup scrollbar",
+    "prevent narrow dialog time-field overflow"
+  ],
+  "unassessed": [
+    "owner-aesthetic-acceptance",
+    "independent-model-comparison",
+    "cross-browser",
+    "real-mobile-hardware",
+    "screen-readers",
+    "live-cowork"
+  ],
+  "note": "Current form values and expanded visual states were verified separately. No universal custom-control preference or accessibility certification is implied."
+}
