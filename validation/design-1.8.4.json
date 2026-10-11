@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "skillVersion": "1.8.4",
+  "date": "2026-10-12",
+  "attemptType": "author-walkthrough",
+  "case": "visual-material-studio",
+  "independentAgentEvaluation": false,
+  "ownerVisualAcceptance": "not-assessed",
+  "runtime": {
+    "os": "Windows",
+    "node": "24.18.0",
+    "browser": "Chrome/154.0.8037.98"
+  },
+  "viewportsCssPx": [
+    1440,
+    1024,
+    390,
+    320
+  ],
+  "assertionsPassed": 20,
+  "assertionsFailed": 0,
+  "screenshotsCaptured": 13,
+  "representativeViewsInspectedAcrossIterations": 13,
+  "affectedFinalViewsReinspected": true,
+  "sourceHashes": {
+    "index.html": "861dec0c2db07b30aa9d15bceebb644c54ffd5c5a5eb0ada96ebbc054db5bed5",
+    "style.css": "d8d6b4b34e934b2279a5abad995d422b6248c8b81f00b214f62d078ef6304424",
+    "scene.js": "8ef4fd7360d40049cb2019fde1cfed866df7a308820ccf5fe0d0cbc6dc16bbc3",
+    "assets/space-grotesk.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+  },
+  "profilePurged": true,
+  "externalServicesCalledByDemo": false,
+  "demoDistributedInSkill": false,
+  "deliberateFallbackCase": "WebGL context loss",
+  "limits": [
+    "independent-model-comparison",
+    "owner-aesthetic-acceptance",
+    "live-cowork",
+    "cross-browser",
+    "screen-readers",
+    "real-mobile-hardware",
+    "frame-rate-and-field-performance"
+  ],
+  "note": "A coherent rendered author example and functional checks do not establish broad model-generation gains."
+}

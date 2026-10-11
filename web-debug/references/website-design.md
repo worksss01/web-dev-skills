@@ -2,7 +2,7 @@
 
 Use for new websites, substantial page creation and requested redesign. For a focused visual defect, use [UI diagnosis](ui-design.md) and retain the existing system. A lightweight skill can still produce visually ambitious work; do not confuse low instruction/tool overhead with a requirement for a plain website.
 
-For a complete page, connected flow or substantial interactive surface, read [Design craft](design-craft.md) when composing and reviewing the result. It covers continuity beyond the opening, task-specific density, control states and narrow-screen representation; small fixes do not need that extra workflow.
+For a complete page, connected flow or substantial interactive surface, use [Visual direction](visual-direction.md) to resolve a product-specific composition and adapt reference mechanisms into one system; use [Design craft](design-craft.md) to refine continuity, control states and narrow-screen representation. Small fixes do not need these extra references.
 
 ## Modern design contract
 
